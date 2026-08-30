@@ -17,6 +17,20 @@
                 Console.WriteLine("Enter Invalid Number");
             }
             #endregion
+
+            #region Question 2
+            Console.Write("Enter a string: ");
+            string? input = Console.ReadLine();
+            try
+            {
+                int number = int.Parse(input!);
+                Console.WriteLine($"Converted Number: {number}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("FormatException: The input contains non-numeric characters.");
+            }
+            #endregion
         }
     }
 }

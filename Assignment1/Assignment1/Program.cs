@@ -7,10 +7,10 @@
             #region Question 1
             // Q1 : Write a program that allows the user to enter a number then print it. 
             Console.WriteLine("Enter Number:");
-            string? input = Console.ReadLine();
-            if (int.TryParse(input, out int number))
+            string? s = Console.ReadLine();
+            if (int.TryParse(s, out int i))
             {
-                Console.WriteLine(number);
+                Console.WriteLine(i);
             }
             else
             {
@@ -20,10 +20,10 @@
 
             #region Question 2
             Console.Write("Enter a string: ");
-            string? input = Console.ReadLine();
+            string? inputt = Console.ReadLine();
             try
             {
-                int number = int.Parse(input!);
+                int number = int.Parse(inputt!);
                 Console.WriteLine($"Converted Number: {number}");
             }
             catch (FormatException)

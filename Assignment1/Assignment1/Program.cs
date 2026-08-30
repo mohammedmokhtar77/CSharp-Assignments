@@ -142,6 +142,22 @@
 
             #endregion
 
+
+            #region Question 8
+
+            /*8- Which of the following statements is correct about 
+                    the C#.NET code snippet given below? 
+                    a) A value 0 will be assigned to d. (False)
+                    b) A value 1 will be assigned to d.  (True)
+                    c) A value -1 will be assigned to d. (False)
+                    d) The code reports an error. (False)
+                    e) The code snippet will work correctly if ! is replaced by Not. (False)
+                    */
+            int d;
+            d = Convert.ToInt32(!(30 < 20));  // ((false (bool)) ===> !(false) ===> true ====> ConvertToInt ===> 1)
+
+            #endregion
+
         }
     }
 }

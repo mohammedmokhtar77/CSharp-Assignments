@@ -126,6 +126,22 @@
             e2.Name = "Omar";
             Console.WriteLine($"e1 : {e1.Name} \t e2 : {e2.Name}");
             #endregion
+
+            #region Question 7
+
+            // 7- Write C# program that take two string variables and print them as one variable 
+            Console.WriteLine("Enter First String");
+            string? s1 = Console.ReadLine();
+
+            Console.WriteLine("Enter Second String");
+            string? s2 = Console.ReadLine();
+
+            Console.WriteLine("1st Way (String Concatenation): " + s1 + " " + s2);
+            Console.WriteLine("2nd Way (Composite Formatting): {0} {1}", s1, s2);
+            Console.WriteLine($"3rd Way (String Interpolation): {s1} {s2}");
+
+            #endregion
+
         }
     }
 }

@@ -175,6 +175,31 @@
             // Result: 6 1
             #endregion
 
+            #region Question 10
+
+            /*10-What will be the output of the C# code given below?  
+                    a) 5 6 
+                    b) 6 5 
+                    c) 6 6 
+                    d) 7 7
+                    */
+            int num = 1, z = 5;
+            if (!(num <= 0)) // !(False) => True , 2 + 5 + " " + 7 => 7 + " " + 7
+                Console.WriteLine(++num + z++ + " " + ++z);
+            else
+                Console.WriteLine(--num + z-- + " " + --z);
+
+            /*
+                 num <= 0 → false
+                 !false → true, so the if block executes
+                 ++num → 2 (pre-increment)
+                 z++ → 5, then z becomes 6 (post-increment)
+                 ++z → 7
+                 Output: 7 7
+            */
+
+            #endregion
+
         }
     }
 }

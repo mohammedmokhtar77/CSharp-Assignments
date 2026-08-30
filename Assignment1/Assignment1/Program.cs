@@ -90,6 +90,22 @@
             }
 
             #endregion
+
+            #region Question 5
+
+            /* Q5: Write C# program that Assigning one value type 
+                variable to another and modifying the value of one variable and mention what will happen?
+                Answer:Since int is a value type, assigning x to y copies the value.
+                       Therefore, modifying x does not affect y.
+                       The output will be:
+                       X: 5    Y: 10  
+                */
+
+            int x = 10;
+            int y = x;
+            x = 5;
+            Console.WriteLine($"X: {x} \t Y: {y}");
+            #endregion
         }
     }
 }

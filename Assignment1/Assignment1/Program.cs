@@ -142,7 +142,6 @@
 
             #endregion
 
-
             #region Question 8
 
             /*8- Which of the following statements is correct about 
@@ -156,6 +155,24 @@
             int d;
             d = Convert.ToInt32(!(30 < 20));  // ((false (bool)) ===> !(false) ===> true ====> ConvertToInt ===> 1)
 
+            #endregion
+
+            #region Question 9
+            /*
+             9- Which of the following is the correct output for the 
+                C# code given below? 
+                a) 6.5 1  (False)
+                b) 6.5 0 (False)
+                c) 6 0 (False)
+                d) 6 1 (True)
+                e) 6.5 6.5 (False)
+            */
+
+            Console.WriteLine(13 / 2 + " " + 13 % 2);
+
+            // 13 / 2 = 6 because both operands are integers (integer division)
+            // (13 % 2) = 1 because 1 is the remainder
+            // Result: 6 1
             #endregion
 
         }

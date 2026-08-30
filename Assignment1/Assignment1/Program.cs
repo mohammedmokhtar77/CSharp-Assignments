@@ -106,6 +106,26 @@
             x = 5;
             Console.WriteLine($"X: {x} \t Y: {y}");
             #endregion
+
+            #region Question 6
+            /*
+            Q6: Write C# program that Assigning one reference type
+            variable to another and modifying the object through
+            one variable and mention what will happen.
+
+            Answer:
+            Since Person is a reference type, assigning p1 to p2 makes
+            both variables refer to the same object. Therefore, modifying
+            the object through p1 will also affect p2.
+            */
+
+            Employee e1 = new Employee() { Name = "Mohammed" };
+            Employee e2 = new Employee();
+            e2.Name = "Mokhtar";
+            e2 = e1;
+            e2.Name = "Omar";
+            Console.WriteLine($"e1 : {e1.Name} \t e2 : {e2.Name}");
+            #endregion
         }
     }
 }

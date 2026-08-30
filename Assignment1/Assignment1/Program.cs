@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            // Q1 : Write a program that allows the user to enter a number then print it. 
             #region Question 1
+            // Q1 : Write a program that allows the user to enter a number then print it. 
             Console.WriteLine("Enter Number:");
             string? input = Console.ReadLine();
             if (int.TryParse(input, out int number))
@@ -32,6 +32,8 @@
             }
             #endregion
 
+            #region Question 3
+
             /*
                 Q3 : Write C# program that Perform a simple arithmetic 
                    operation with floating-point numbers And mention 
@@ -40,7 +42,6 @@
                        so arithmetic operations can sometimes produce a value that is slightly different from the expected result 
                        due to floating-point precision limitations.
             */
-            #region Question 3
 
             Console.Write("Enter first floating-point number: ");
             string? input1 = Console.ReadLine();
@@ -61,6 +62,33 @@
             {
                 Console.WriteLine("Invalid input.");
             }
+            #endregion
+
+            #region Question 4
+
+            // Q4: Write C# program that Extract a substring from a given string.
+            Console.Write("Enter a string: ");
+            string? input = Console.ReadLine();
+
+            Console.Write("Enter start index: ");
+            int startIndex = int.Parse(Console.ReadLine()!);
+
+            Console.Write("Enter length: ");
+            int length = int.Parse(Console.ReadLine()!);
+
+            if (input != null &&
+                startIndex >= 0 &&
+                length >= 0 &&
+                startIndex + length <= input.Length)
+            {
+                string substring = input.Substring(startIndex, length);
+                Console.WriteLine($"Extracted: {substring}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid start index or length.");
+            }
+
             #endregion
         }
     }

@@ -2,15 +2,15 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             #region Question 1
             // Q1 : Write a program that allows the user to enter a number then print it. 
             Console.WriteLine("Enter Number:");
-            string? input = Console.ReadLine();
-            if (int.TryParse(input, out int number))
+            string? s = Console.ReadLine();
+            if (int.TryParse(s, out int i))
             {
-                Console.WriteLine(number);
+                Console.WriteLine(i);
             }
             else
             {
@@ -20,10 +20,10 @@
 
             #region Question 2
             Console.Write("Enter a string: ");
-            string? input = Console.ReadLine();
+            string? inputt = Console.ReadLine();
             try
             {
-                int number = int.Parse(input!);
+                int number = int.Parse(inputt!);
                 Console.WriteLine($"Converted Number: {number}");
             }
             catch (FormatException)
@@ -146,26 +146,25 @@
 
             /*8- Which of the following statements is correct about 
                     the C#.NET code snippet given below? 
-                    a) A value 0 will be assigned to d. (False)
-                    b) A value 1 will be assigned to d.  (True)
-                    c) A value -1 will be assigned to d. (False)
-                    d) The code reports an error. (False)
-                    e) The code snippet will work correctly if ! is replaced by Not. (False)
+                    a. A value 0 will be assigned to d. (False)
+                    b. A value 1 will be assigned to d.  (True)
+                    c. A value -1 will be assigned to d. (False)
+                    d. The code reports an error. (False)
+                    e. The code snippet will work correctly if ! is replaced by Not. (False)
                     */
-            int d;
-            d = Convert.ToInt32(!(30 < 20));  // ((false (bool)) ===> !(false) ===> true ====> ConvertToInt ===> 1)
-
+            int d = Convert.ToInt32(!(30 < 20)); // ((false (bool)) ===> !(false) ===> true ====> ConvertToInt ===> 1)
+            Console.WriteLine(d);
             #endregion
 
             #region Question 9
             /*
              9- Which of the following is the correct output for the 
                 C# code given below? 
-                a) 6.5 1  (False)
-                b) 6.5 0 (False)
-                c) 6 0 (False)
-                d) 6 1 (True)
-                e) 6.5 6.5 (False)
+                a. 6.5 1  (False)
+                b. 6.5 0 (False)
+                c. 6 0 (False)
+                d. 6 1 (True)
+                e. 6.5 6.5 (False)
             */
 
             Console.WriteLine(13 / 2 + " " + 13 % 2);
@@ -178,10 +177,10 @@
             #region Question 10
 
             /*10-What will be the output of the C# code given below?  
-                    a) 5 6 
-                    b) 6 5 
-                    c) 6 6 
-                    d) 7 7
+                    a. 5 6 
+                    b. 6 5 
+                    c. 6 6 
+                    d. 7 7
                     */
             int num = 1, z = 5;
             if (!(num <= 0)) // !(False) => True , 2 + 5 + " " + 7 => 7 + " " + 7

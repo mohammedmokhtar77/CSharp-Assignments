@@ -25,7 +25,7 @@ class Program
             Console.WriteLine("Invalid input.");
         }
         #endregion
-
+        
         #region Question2
         /*
          2- Write a program that allows the user to insert an integer then print 
@@ -58,26 +58,40 @@ class Program
             Console.WriteLine("Invalid Input...");
         }
         #endregion
-
+        
         #region Question3
-
+        
         /*3- Write a program that takes 3 integers from the user then prints the max 
              element and the min element. */
         
         Console.Write("Enter first number: ");
         int num1 = int.Parse(Console.ReadLine()!);
-
+        
         Console.Write("Enter second number: ");
         int num2 = int.Parse(Console.ReadLine()!);
-
+        
         Console.Write("Enter third number: ");
         int num3 = int.Parse(Console.ReadLine()!);
-
+        
         int max = Math.Max(num1, Math.Max(num2, num3));
         int min = Math.Min(num1, Math.Min(num2, num3));
-
+        
         Console.WriteLine($"Max: {max}");
         Console.WriteLine($"Min: {min}"); // Can Use If Conditions But I Preferred Math
+        #endregion
+
+        #region Question4
+        Console.Write("Enter the number: ");
+        string? input3 = Console.ReadLine();
+
+        if (int.TryParse(input3, out int num))
+        {
+            Console.WriteLine(num % 2 == 0 ? $"{num} Is Even" : $"{num} Is Odd");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input...");
+        }
         #endregion
     }
 }

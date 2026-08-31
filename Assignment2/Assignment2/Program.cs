@@ -4,7 +4,7 @@ namespace Assignment2;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         #region Question1
         
@@ -32,7 +32,7 @@ class Program
             negative if it is negative number otherwise print positive.
          */
         string? input2 = Console.ReadLine();
-
+        
         if (int.TryParse(input2, out int numberToCheck))
         {
             /* Console.WriteLine(
@@ -51,12 +51,33 @@ class Program
             {
                 Console.WriteLine("Zero");
             }
-
+        
         }
         else
         {
             Console.WriteLine("Invalid Input...");
         }
+        #endregion
+
+        #region Question3
+
+        /*3- Write a program that takes 3 integers from the user then prints the max 
+             element and the min element. */
+        
+        Console.Write("Enter first number: ");
+        int num1 = int.Parse(Console.ReadLine()!);
+
+        Console.Write("Enter second number: ");
+        int num2 = int.Parse(Console.ReadLine()!);
+
+        Console.Write("Enter third number: ");
+        int num3 = int.Parse(Console.ReadLine()!);
+
+        int max = Math.Max(num1, Math.Max(num2, num3));
+        int min = Math.Min(num1, Math.Min(num2, num3));
+
+        Console.WriteLine($"Max: {max}");
+        Console.WriteLine($"Min: {min}"); // Can Use If Conditions But I Preferred Math
         #endregion
     }
 }

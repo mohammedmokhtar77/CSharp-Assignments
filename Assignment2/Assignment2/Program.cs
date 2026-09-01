@@ -206,21 +206,21 @@ class Program
         Console.WriteLine($"Average Marks = {average}");
         Console.WriteLine($"Percentage = {percentage}");
         #endregion
-
+        
         #region Question11
         /*
         11- Write a program to input the month number and print
         the number of days in that month.
         */
-
+        
         Dictionary<int, int> monthDays = new()
         {
             { 1, 31 },{ 2, 28 }, { 3, 31 }, { 4, 30 }, { 5, 31 }, { 6, 30 },
             { 7, 31 }, { 8, 31 }, { 9, 30 }, { 10, 31 }, { 11, 30 }, { 12, 31 }
         };
-
+        
         Console.Write($"Enter the month number : ");
-
+        
         if (int.TryParse(Console.ReadLine() , out int monthNumber))
         {
             if (monthDays.TryGetValue(monthNumber , out int days))
@@ -233,20 +233,20 @@ class Program
         #endregion
         
         #region Question12
-
+        
         /*
         12- Write a program to create a Simple Calculator.
         */
-
+        
         Console.Write("Enter first number: ");
         double firstNumber = double.Parse(Console.ReadLine()!);
-
+        
         Console.Write("Enter operator (+, -, *, /): ");
         char operation = char.Parse(Console.ReadLine()!);
-
+        
         Console.Write("Enter second number: ");
         double secondNumber = double.Parse(Console.ReadLine()!);
-
+        
         switch (operation)
         {
             case '+':
@@ -268,6 +268,20 @@ class Program
                 Console.WriteLine("Invalid operator.");
                 break;
         }
+        #endregion
+
+        #region Question13
+        /*13- Write a program to allow the user to enter a string and print the REVERSE of it. */
+        Console.Write("Enter a string: ");
+        string? inputString = Console.ReadLine();
+        if (inputString != null)
+            for (int i = inputString.Length - 1; i >= 0; i--)
+                Console.Write(inputString[i]);
+        
+        /* Another Solution Using Built-in Methods
+        char[] chars = inputString.ToCharArray();
+        Array.Reverse(c);
+        Console.WriteLine(new string(chars));*/
         #endregion
     }
 }

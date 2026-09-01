@@ -505,5 +505,13 @@ class Program
         Console.WriteLine($"Minimum element: {minimum}");
 
         #endregion
+        
+        #region Question24
+        /*24- Write a program in C# Sharp to find the second largest element in an array.*/
+        int[] arrQ = { 10, 5, 20, 3, 15 };
+        int secondLargest = arrQ.Distinct().OrderByDescending(x => x).Skip(1).First(); // Linq Functions
+        Console.WriteLine($"Second largest element: {secondLargest}");
+
+        #endregion
     }
 }

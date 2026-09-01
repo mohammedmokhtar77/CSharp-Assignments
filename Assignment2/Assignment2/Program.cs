@@ -308,5 +308,54 @@ class Program
         
 
         #endregion
+        
+        #region Question15
+
+        /*
+        15- Write a program in C# Sharp to find prime numbers within a range of numbers.
+        */
+
+        Console.Write("Input starting number of range: ");
+        int start = int.Parse(Console.ReadLine()!);
+
+        Console.Write("Input ending number of range: ");
+        int end = int.Parse(Console.ReadLine()!);
+
+        Console.WriteLine($"The prime numbers between {start} and {end} are:");
+
+        for (int numberP = start; numberP <= end; numberP++)
+        {
+            if (numberP < 2)
+                continue;
+            bool isPrime = true;
+            for (int i = 2; i < numberP; i++)
+            {
+                if (numberP % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime)
+                Console.Write($"{numberP} ");
+        }
+
+        #endregion
+        
+        #region Question16
+        /*
+        16- Write a program in C# Sharp to convert a decimal number
+        into binary without using an array.
+        */
+        Console.Write("Enter a number to convert: ");
+        if (int.TryParse(Console.ReadLine(), out int numberToConvert))
+        {
+            string binary = Convert.ToString(numberToConvert, 2); // (number , base)
+            Console.WriteLine($"The Binary of {numberToConvert} is {binary}.");
+        }
+        else
+            Console.WriteLine("Invalid input...");
+        
+        #endregion
     }
 }

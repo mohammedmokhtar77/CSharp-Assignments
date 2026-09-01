@@ -166,5 +166,24 @@ class Program
         else
             Console.WriteLine("Invalid input...");
         #endregion
+
+        #region Question9
+
+        /*9- Write a program that takes two integers then prints the power.*/
+        Console.Write("Enter the base number: ");
+        string? baseInput = Console.ReadLine();
+        
+        Console.Write("Enter the exponent number: ");
+        string? exponentInput = Console.ReadLine();
+        
+        if (int.TryParse(baseInput, out int baseNumber) && int.TryParse(exponentInput, out int exponentNumber))
+        {
+            double result = Math.Pow(baseNumber, exponentNumber);
+            Console.WriteLine($"{baseNumber} ^ {exponentNumber} is: {result}");
+        }
+        else
+            Console.WriteLine("Invalid input...");
+        
+        #endregion
     }
 }

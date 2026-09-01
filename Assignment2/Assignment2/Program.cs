@@ -283,5 +283,30 @@ class Program
         Array.Reverse(c);
         Console.WriteLine(new string(chars));*/
         #endregion
+        
+        #region Question14
+
+        /*
+        14- Write a program to allow the user to enter an int
+        and print the REVERSED of it.
+        */
+
+        Console.Write("Enter an integer: ");
+        if (int.TryParse(Console.ReadLine(), out int numberToReverse)) // Ex: 1234 => 4321
+        {
+            int reversed = 0;
+            while (numberToReverse != 0)
+            {
+                int digit = numberToReverse % 10; // 1234 % 10 = 4 , 123 % 10 = 3 , 12 % 10 = 2 , 1 % 10 = 1
+                reversed = reversed * 10 + digit; // 0 * 10 + 4 = 4 , 4 * 10 + 3 = 43 , 43 * 10 + 2 = 432 , 432 * 10 + 1 = 4321
+                numberToReverse /= 10; // 1234 / 10 = 123 , 123 / 10 = 12 , 12 / 10 = 1 , 1 / 10 = 0
+            }
+            Console.WriteLine($"Reversed: {reversed}");
+        }
+        else
+            Console.WriteLine("Invalid input.");
+        
+
+        #endregion
     }
 }

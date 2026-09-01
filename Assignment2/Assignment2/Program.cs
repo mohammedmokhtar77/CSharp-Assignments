@@ -483,5 +483,14 @@ class Program
              */
         #endregion
 
+        #region Question22
+        /*22- Write a program in C# Sharp to count the frequency of each element of an array. */
+        int[] arr = { 1, 2, 3, 2, 1, 4, 5, 3, 2 };
+        foreach (int i in arr)
+        {
+            Console.WriteLine($"{i} occurs {arr.Count(x => x == i)} times"); // lambda expression
+        }
+        #endregion
+
     }
 }

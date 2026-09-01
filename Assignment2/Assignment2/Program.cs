@@ -513,5 +513,49 @@ class Program
         Console.WriteLine($"Second largest element: {secondLargest}");
 
         #endregion
+        
+        #region Question25
+        /*
+        25- Given a list of space separated words, reverse the order of the words.
+        */
+        string[] words = Console.ReadLine()!.Split(' ');
+        Array.Reverse(words);
+        Console.WriteLine(string.Join(" ", words));
+        #endregion
+
+        #region Question26
+        /*26- Write a program to create two multidimensional arrays of same size. 
+              Accept value from user and store them in first array. Now copy all the 
+              elements of first array on second array and print second array.*/
+
+        int[,] arrr1 = new int[2, 2];
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Console.Write($"Enter value for arrr1[{i},{j}]: ");
+                arrr1[i, j] = int.Parse(Console.ReadLine()!);
+            }
+        }
+        int[,] arrr2 = new int[2, 2];
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                arrr2[i, j] = arrr1[i, j];
+            }
+        }
+
+        Console.WriteLine("Second array:");
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Console.Write(arrr2[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        #endregion
     }
 }

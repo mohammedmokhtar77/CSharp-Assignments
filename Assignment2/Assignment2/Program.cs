@@ -111,5 +111,26 @@ class Program
         }
 
         #endregion
+
+        #region Question6
+        /*6- Write a program that allows the user to insert an integer then print 
+            all numbers between 1 to that number.*/
+
+        Console.Write("Enter an Integer: ");
+        string? input4 = Console.ReadLine();
+        
+        if (int.TryParse(input4, out int limit) && limit >= 1)
+        {
+            for (int i = 1; i <= limit; i++)
+            {
+                Console.Write($"{i} ");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input...");
+        }
+
+        #endregion
     }
 }

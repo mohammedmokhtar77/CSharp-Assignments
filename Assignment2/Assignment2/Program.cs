@@ -231,5 +231,43 @@ class Program
         else
             Console.WriteLine("Invalid Input...");
         #endregion
+        
+        #region Question12
+
+        /*
+        12- Write a program to create a Simple Calculator.
+        */
+
+        Console.Write("Enter first number: ");
+        double firstNumber = double.Parse(Console.ReadLine()!);
+
+        Console.Write("Enter operator (+, -, *, /): ");
+        char operation = char.Parse(Console.ReadLine()!);
+
+        Console.Write("Enter second number: ");
+        double secondNumber = double.Parse(Console.ReadLine()!);
+
+        switch (operation)
+        {
+            case '+':
+                Console.WriteLine($"Result: {firstNumber + secondNumber}");
+                break;
+            case '-':
+                Console.WriteLine($"Result: {firstNumber - secondNumber}");
+                break;
+            case '*':
+                Console.WriteLine($"Result: {firstNumber * secondNumber}");
+                break;
+            case '/':
+                if (secondNumber != 0)
+                    Console.WriteLine($"Result: {firstNumber / secondNumber}");
+                else
+                    Console.WriteLine("Cannot divide by zero.");
+                break;
+            default:
+                Console.WriteLine("Invalid operator.");
+                break;
+        }
+        #endregion
     }
 }

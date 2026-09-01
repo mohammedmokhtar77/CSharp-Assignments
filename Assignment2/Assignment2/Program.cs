@@ -407,5 +407,28 @@ class Program
         else
             Console.WriteLine("Invalid input.");
         #endregion
+        
+        #region Question19
+
+        /*
+        19- Write a program that prints an identity matrix using for loop.
+        */
+
+        Console.Write("Enter the size of the identity matrix: ");
+        if (int.TryParse(Console.ReadLine(), out int n))
+        {
+            for (int row = 0; row < n; row++)
+            {
+                for (int column = 0; column < n; column++)
+                    Console.Write(row == column ? "1 " : "0 ");
+                
+                Console.WriteLine(); // To move to the next line after each row
+            }
+        }
+        else
+            Console.WriteLine("Invalid input...");
+        
+        #endregion
+
     }
 }

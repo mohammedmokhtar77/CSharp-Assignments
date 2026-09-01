@@ -430,5 +430,12 @@ class Program
         
         #endregion
 
+        #region Question20
+        /*20- Write a program in C# Sharp to find the sum of all elements of the array.*/
+        int[] array = { 1, 2, 3, 4, 5 };
+        int sum = array.Sum();
+        Console.WriteLine($"The sum of the array is: {sum}");
+        #endregion
+
     }
 }

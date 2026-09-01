@@ -150,5 +150,21 @@ class Program
         else
             Console.WriteLine("Invalid input...");
         #endregion
+
+        #region Question8
+
+        /*8- Write a program that allows to user to insert number then print all 
+             even numbers between 1 to this number*/
+        Console.Write("Enter a number: ");
+        string? input6 = Console.ReadLine();
+
+        if (int.TryParse(input6, out int numberToDivide))
+        {
+            for (int i = 2; i <= numberToDivide; i+=2)
+                    Console.Write($"{i} ");
+        }
+        else
+            Console.WriteLine("Invalid input...");
+        #endregion
     }
 }

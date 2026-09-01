@@ -491,6 +491,19 @@ class Program
             Console.WriteLine($"{i} occurs {arr.Count(x => x == i)} times"); // lambda expression
         }
         #endregion
+        
+        #region Question23
 
+        /*23- Write a program in C# Sharp to find maximum and minimum element in an array.*/
+
+        int[] arre = { 10, 5, 20, 3, 15 };
+
+        int maximum = arre.Max();
+        int minimum = arre.Min();
+
+        Console.WriteLine($"Maximum element: {maximum}");
+        Console.WriteLine($"Minimum element: {minimum}");
+
+        #endregion
     }
 }

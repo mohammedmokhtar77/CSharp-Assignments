@@ -102,7 +102,31 @@ class Program
         // int result = SumOfDigits(number); // 25 % 10 = 5, sum = 0 + 5 = 5 , number = 25 / 10 = 2, 2 % 10 = 2 , sum = 5 + 2 = 7;  
         //
         // Console.WriteLine($"The sum of the digits of the number {number} is: {result}");
-        #endregion  
+        #endregion
+
+        #region Question5
+
+        /*5- Create a function named "IsPrime", which receives an integer number 
+            and retuns true if it is prime, or false if it is not: */
+        static bool IsPrime(int number)
+        {
+            if (number < 2)
+                return false;
+            for (int i = 2; i * i <= number; i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
+        Console.Write("Enter a number: ");
+        if (int.TryParse(Console.ReadLine()!, out int number))
+            Console.WriteLine(IsPrime(number));
+        else
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+        #endregion
+
 
     }
 }

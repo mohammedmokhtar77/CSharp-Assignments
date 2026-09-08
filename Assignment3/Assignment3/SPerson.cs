@@ -2,7 +2,6 @@ namespace Assignment3;
 
 public struct SPerson
 {
-
         public string Name { get; set; }
         public int Age { get; set; }
 

@@ -212,17 +212,37 @@ class Program
 #endregion
 
         #endregion
-        
-        /*
-         1. Create an enum called "WeekDays" with the days of the week 
-            (Monday to Sunday) as its members. Then, write a C# program that 
-            prints out all the days of the week using this enum.
-         */
 
-        foreach (WeekDays day in Enum.GetValues<WeekDays>())
-        {
-            Console.WriteLine(day);
-        }
+        #region Question1
+
+        // /*
+        //  1. Create an enum called "WeekDays" with the days of the week 
+        //     (Monday to Sunday) as its members. Then, write a C# program that 
+        //     prints out all the days of the week using this enum.
+        //  */
+        //
+        // foreach (WeekDays day in Enum.GetValues<WeekDays>())
+        // {
+        //     Console.WriteLine(day);
+        // }
+
+        #endregion
         
+        /*2. Define a struct "Person" with properties "Name" and "Age". Create an 
+            array of three "Person" objects and populate it with data. Then, write 
+            a C# program to display the details of all the persons in the array. */
+
+        SPerson[] persons =
+        {
+            new SPerson("Ali", 23),
+            new("Mohammed", 20),
+            new("Nasser", 5)
+        };
+
+        foreach (SPerson person in persons)
+        {
+            Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        }
+
     }
 }

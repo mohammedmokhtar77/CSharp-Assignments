@@ -355,5 +355,30 @@ class Program
         
 
         #endregion
+
+        #region Question6
+
+        // /* 6. Create a struct called "Point" to represent a 2D point with properties
+        //  "X" and "Y". Write a C# program that takes two points as input from  the user
+        //   and calculates the distance between them.   */
+        //
+        // Console.Write("Enter Point 1 (X Y): ");
+        // double[] point1 = Array.ConvertAll(
+        //     Console.ReadLine()!.Split(' '), double.Parse);
+        //
+        // Console.Write("Enter Point 2 (X Y): ");
+        // double[] point2 = Array.ConvertAll(Console.ReadLine()!.Split(' '), double.Parse);
+        //
+        // Point p01 = new Point(point1[0], point1[1]);
+        // Point p02 = new Point(point2[0], point2[1]);
+        //
+        // double distance = Math.Sqrt(
+        //     Math.Pow(p02.X - p01.X, 2) +
+        //     Math.Pow(p02.Y - p01.Y, 2)
+        // );
+        //
+        // Console.WriteLine($"Distance = {distance}");
+
+        #endregion
     }
 }

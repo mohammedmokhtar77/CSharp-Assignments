@@ -108,25 +108,50 @@ class Program
 
         /*5- Create a function named "IsPrime", which receives an integer number 
             and retuns true if it is prime, or false if it is not: */
-        static bool IsPrime(int number)
+        // static bool IsPrime(int number)
+        // {
+        //     if (number < 2)
+        //         return false;
+        //     for (int i = 2; i * i <= number; i++)
+        //     {
+        //         if (number % i == 0)
+        //             return false;
+        //     }
+        //     return true;
+        // }
+        //
+        // Console.Write("Enter a number: ");
+        // if (int.TryParse(Console.ReadLine()!, out int number))
+        //     Console.WriteLine(IsPrime(number));
+        // else
+        //     Console.WriteLine("Invalid input. Please enter a valid integer.");
+        #endregion
+        
+        /*6- Create a function named MinMaxArray, to return the minimum and 
+            maximum values stored in an array, using reference parameters */
+        static void MinMaxArray(int[] array, out int min, out int max)
         {
-            if (number < 2)
-                return false;
-            for (int i = 2; i * i <= number; i++)
+            min = array[0];
+            max = array[0];
+
+            for (int i = 1; i < array.Length; i++)
             {
-                if (number % i == 0)
-                    return false;
+                if (array[i] < min)
+                    min = array[i];
+
+                if (array[i] > max)
+                    max = array[i];
             }
-            return true;
+            // I can Use Arr.Min() and Arr.Max() methods to get the min and max values in the array
         }
 
-        Console.Write("Enter a number: ");
-        if (int.TryParse(Console.ReadLine()!, out int number))
-            Console.WriteLine(IsPrime(number));
-        else
-            Console.WriteLine("Invalid input. Please enter a valid integer.");
-        #endregion
+        Console.Write("Enter array elements: ");
+        int[] numbers = Array.ConvertAll(Console.ReadLine()!.Split(' ', StringSplitOptions.RemoveEmptyEntries), int.Parse);
 
+        MinMaxArray(numbers, out int min, out int max);
+
+        Console.WriteLine($"Minimum = {min}");
+        Console.WriteLine($"Maximum = {max}");
 
     }
 }

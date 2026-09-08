@@ -79,8 +79,30 @@ class Program
         // Console.WriteLine($"Sum: {res.sum} , Sub: {res.sub}");
 
         #endregion
-        
-        
+
+        #region Question4
+
+        // /*4- Write a program in C# Sharp to create a function to calculate the sum of 
+        //         the individual digits of a given number. Output should be like
+        //          Enter a number: 25 ,The sum of the digits of the number 25 is: 7 */
+        //
+        // static int SumOfDigits(int number)
+        // {
+        //     int sum = 0;
+        //     while (number != 0)
+        //     {
+        //         sum += number % 10; // sum = sum + (number % 10) 
+        //         number /= 10; // number = number / 10
+        //     }
+        //
+        //     return sum;
+        // }
+        // Console.Write("Enter a number: ");
+        // int number = int.Parse(Console.ReadLine()!);
+        // int result = SumOfDigits(number); // 25 % 10 = 5, sum = 0 + 5 = 5 , number = 25 / 10 = 2, 2 % 10 = 2 , sum = 5 + 2 = 7;  
+        //
+        // Console.WriteLine($"The sum of the digits of the number {number} is: {result}");
+        #endregion  
 
     }
 }

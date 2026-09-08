@@ -235,6 +235,8 @@ class Program
 
         #endregion
 
+        #region Enum & Struct
+
         #region Question1
 
         // /*
@@ -378,6 +380,44 @@ class Program
         // );
         //
         // Console.WriteLine($"Distance = {distance}");
+
+        #endregion
+
+        #region Question7
+
+        /*
+         7. Create a struct called "Person" with properties "Name" and "Age". 
+            Write a C# program that takes details of 3 persons as input from the 
+            user and displays the name and age of the oldest person. 
+         */
+        
+        SPerson[] persons = new SPerson[3];
+
+        for (int i = 0; i < persons.Length; i++)
+        {
+            Console.Write($"Enter Person {i + 1} Name: ");
+            string name = Console.ReadLine()!;
+
+            Console.Write($"Enter Person {i + 1} Age: ");
+            int age = int.Parse(Console.ReadLine()!);
+
+            persons[i] = new SPerson(name, age);
+        }
+
+        SPerson oldest = persons[0];
+
+        for (int i = 1; i < persons.Length; i++)
+        {
+            if (persons[i].Age > oldest.Age)
+            {
+                oldest = persons[i];
+            }
+        }
+
+        Console.WriteLine($"Oldest Person: {oldest.Name}");
+        Console.WriteLine($"Age: {oldest.Age}");
+
+#endregion
 
         #endregion
     }

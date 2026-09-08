@@ -61,6 +61,26 @@ class Program
         Console.WriteLine(p1.Name); // Ahmed
 
         #endregion
+
+        #region Question3
+
+        // /*3- Write a c# Function that accept 4 parameters from user and 
+        //      return result of summation and subtracting of two numbers */
+        // static (int sum, int sub) Calc(int num1, int num2, int num3, int num4)
+        // {
+        //     int sum = num1 + num2;
+        //     int sub = num3 - num4;
+        //     return (sum, sub);
+        // }
+        //
+        // Console.Write("Enter 4 Numbers: ");
+        // int[] nums = Array.ConvertAll(Console.ReadLine()!.Split(' '), int.Parse);
+        // (int sum, int sub) res = Calc(nums[0], nums[1], nums[2], nums[3]);
+        // Console.WriteLine($"Sum: {res.sum} , Sub: {res.sub}");
+
+        #endregion
         
+        
+
     }
 }

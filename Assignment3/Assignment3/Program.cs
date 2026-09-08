@@ -127,31 +127,82 @@ class Program
         //     Console.WriteLine("Invalid input. Please enter a valid integer.");
         #endregion
         
+        #region Question6
+
         /*6- Create a function named MinMaxArray, to return the minimum and 
             maximum values stored in an array, using reference parameters */
-        static void MinMaxArray(int[] array, out int min, out int max)
-        {
-            min = array[0];
-            max = array[0];
+        // static void MinMaxArray(int[] array, out int min, out int max)
+        // {
+        //     min = array[0];
+        //     max = array[0];
+        //
+        //     for (int i = 1; i < array.Length; i++)
+        //     {
+        //         if (array[i] < min)
+        //             min = array[i];
+        //
+        //         if (array[i] > max)
+        //             max = array[i];
+        //     }
+        //     // I can Use Arr.Min() and Arr.Max() methods to get the min and max values in the array
+        // }
+        //
+        // Console.Write("Enter array elements: ");
+        // int[] numbers = Array.ConvertAll(Console.ReadLine()!.Split(' ', StringSplitOptions.RemoveEmptyEntries), int.Parse);
+        //
+        // MinMaxArray(numbers, out int min, out int max);
+        //
+        // Console.WriteLine($"Minimum = {min}");
+        // Console.WriteLine($"Maximum = {max}");
 
-            for (int i = 1; i < array.Length; i++)
-            {
-                if (array[i] < min)
-                    min = array[i];
+        #endregion
 
-                if (array[i] > max)
-                    max = array[i];
-            }
-            // I can Use Arr.Min() and Arr.Max() methods to get the min and max values in the array
-        }
+        #region Question7
 
-        Console.Write("Enter array elements: ");
-        int[] numbers = Array.ConvertAll(Console.ReadLine()!.Split(' ', StringSplitOptions.RemoveEmptyEntries), int.Parse);
+        /*7- Create an iterative (non-recursive) function to calculate the factorial of 
+            the number specified as parameter */
+        // static long Factorial(int n)
+        // {
+        //     long result = 1;
+        //     for (int i = 1; i <= n; i++)
+        //     {
+        //         result *= i;
+        //     }
+        //     return result;
+        // }
+        //
+        // Console.Write("Enter a number: ");
+        // if (int.TryParse(Console.ReadLine()!, out int number))
+        //     Console.WriteLine($"The factorial of {number} is: {Factorial(number)}");
+        // else
+        //     Console.WriteLine("Invalid input. Please enter a valid integer.");
 
-        MinMaxArray(numbers, out int min, out int max);
+        #endregion
 
-        Console.WriteLine($"Minimum = {min}");
-        Console.WriteLine($"Maximum = {max}");
+        #region Question8
 
+        // /*8- Create a function named "ChangeChar" to modify a letter in a certain 
+        //      position (0 based) of a string, replacing it with a different letter */
+        //
+        // static string ChangeChar(string str, int pos, char newChar)
+        // {
+        //     char[] characters = str.ToCharArray();
+        //     characters[pos] = newChar;
+        //     return new string(characters);
+        // }
+        //
+        // Console.Write("Enter a string: ");
+        // string text = Console.ReadLine()!;
+        //
+        // Console.Write("Enter position: ");
+        // int position = int.Parse(Console.ReadLine()!);
+        //
+        // Console.Write("Enter new character: ");
+        // char newChar = char.Parse(Console.ReadLine()!);
+        //
+        // string result = ChangeChar(text, position, newChar);
+        // Console.WriteLine($"Modified string: {result}");
+
+        #endregion
     }
 }

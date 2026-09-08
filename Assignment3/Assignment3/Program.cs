@@ -1,9 +1,15 @@
 ﻿namespace Assignment3;
 
+enum WeekDays
+{
+    Monday , Tuesday , Wednesday , Thursday , Friday , Saturday , Sunday
+}
 class Program
 {
     static void Main(string[] args)
     {
+        #region Functions
+
         #region Question1
 
         /*
@@ -203,6 +209,20 @@ class Program
         // string result = ChangeChar(text, position, newChar);
         // Console.WriteLine($"Modified string: {result}");
 
+#endregion
+
         #endregion
+        
+        /*
+         1. Create an enum called "WeekDays" with the days of the week 
+            (Monday to Sunday) as its members. Then, write a C# program that 
+            prints out all the days of the week using this enum.
+         */
+
+        foreach (WeekDays day in Enum.GetValues<WeekDays>())
+        {
+            Console.WriteLine(day);
+        }
+        
     }
 }

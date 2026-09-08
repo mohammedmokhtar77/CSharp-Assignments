@@ -4,6 +4,28 @@ enum WeekDays
 {
     Monday , Tuesday , Wednesday , Thursday , Friday , Saturday , Sunday
 }
+
+enum Season
+{
+    Spring, Summer, Autumn, Winter
+}
+
+[Flags]
+enum Permissions
+{
+    None = 0,
+    Read = 1,
+    Write = 2,
+    Delete = 4,
+    Execute = 8
+}
+
+enum Colors
+{
+    Red,
+    Green,
+    Blue
+}
 class Program
 {
     static void Main(string[] args)
@@ -227,21 +249,102 @@ class Program
         // }
 
         #endregion
+
+        #region Question2
+
+        // /*2. Define a struct "Person" with properties "Name" and "Age". Create an 
+        //     array of three "Person" objects and populate it with data. Then, write 
+        //     a C# program to display the details of all the persons in the array. */
+        //
+        // SPerson[] persons =
+        // {
+        //     new SPerson("Ali", 23),
+        //     new("Mohammed", 20),
+        //     new("Nasser", 5)
+        // };
+        //
+        // foreach (SPerson person in persons)
+        // {
+        //     Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // }
+
+        #endregion
+
+        #region Question3
+
+        /*3. Create an enum called "Season" with the four seasons (Spring, 
+            Summer, Autumn, Winter) as its members. Write a C# program that 
+            takes a season name as input from the user and displays the 
+            corresponding month range for that season. Note range for seasons ( 
+            spring march to may , summer june to august , autumn September to 
+            November , winter December to February) */
+        // Console.Write("Enter a season: ");
+        // string input = Console.ReadLine()!;
+        //
+        // if (Enum.TryParse(input, true, out Season season)) // true means ignore Case
+        // {
+        //     switch (season)
+        //     {
+        //         case Season.Spring:
+        //             Console.WriteLine("Spring: March to May");
+        //             break;
+        //
+        //         case Season.Summer:
+        //             Console.WriteLine("Summer: June to August");
+        //             break;
+        //
+        //         case Season.Autumn:
+        //             Console.WriteLine("Autumn: September to November");
+        //             break;
+        //
+        //         case Season.Winter:
+        //             Console.WriteLine("Winter: December to February");
+        //             break;
+        //     }
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Invalid season.");
+        // }
         
-        /*2. Define a struct "Person" with properties "Name" and "Age". Create an 
-            array of three "Person" objects and populate it with data. Then, write 
-            a C# program to display the details of all the persons in the array. */
 
-        SPerson[] persons =
-        {
-            new SPerson("Ali", 23),
-            new("Mohammed", 20),
-            new("Nasser", 5)
-        };
+        #endregion
 
-        foreach (SPerson person in persons)
+        #region Question4
+
+        // /*4- Assign the following Permissions (Read, write, Delete, Execute) in a 
+        //     form of Enum. 
+        //     ● Create Variable from previous Enum to Add and Remove 
+        //     Permission from variable, check if specific Permission is 
+        //     existed inside variable */
+        //
+        // Permissions userPermissions = Permissions.None;
+        //
+        // // Add Permissions ( | ----> BitWise OR)
+        // userPermissions |= Permissions.Read;
+        // userPermissions |= Permissions.Write;
+        // userPermissions |= Permissions.Execute;
+        //
+        // Console.WriteLine($"User Permissions: {userPermissions}");
+        // // Check if Permission Exists
+        // if((userPermissions & Permissions.Read) == Permissions.Read)
+        //     Console.WriteLine("Read permission exists");
+        // // Remove Permission ( & ~ ----> BitWise AND with NOT)
+        // userPermissions &= ~Permissions.Write;
+        // Console.WriteLine($"User Permissions after removing Write: {userPermissions}");
+
+        #endregion
+        
+        Console.Write("Enter a color: ");
+        string input = Console.ReadLine()!;
+
+        if (Enum.TryParse(input, true, out Colors color))
         {
-            Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+            Console.WriteLine($"{color} is a primary color.");
+        }
+        else
+        {
+            Console.WriteLine($"{input} is not a primary color.");
         }
 
     }

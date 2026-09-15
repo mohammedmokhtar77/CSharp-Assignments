@@ -6,7 +6,7 @@ public class Shape
     
     public double Height { get; set; }
 
-    Shape(int width, int height)
+    public Shape(double width, double height)
     {
         Width = width;
         Height = height;

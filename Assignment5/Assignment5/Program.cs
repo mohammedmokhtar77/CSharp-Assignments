@@ -72,6 +72,8 @@ class Program
 
         #endregion
 
+        #region Part 2: Interfaces 
+
         #region Q9
 
         /* Q9. (Pre-interface problem) Create a class Car with methods MoveForward() and 
@@ -121,8 +123,34 @@ class Program
         
 
         #endregion
+
+        #region Q13
+
+        /* What is the benefit of an interface inheriting other interfaces?
+             Benefit:
+                An interface can inherit from multiple interfaces to combine their capabilities.
+                This allows a class that implements the derived interface to support all members
+                from the parent interfaces, while keeping the design organized, reusable, and flexible.
+         */
+
+        #endregion
+
+        #region Q14
+
+        /* Compile Error
+         NewShip newShip = new NewShip();
+         newShip.MoveForward();
+        */
+
+        IMoveable newShip = new NewShip();
+        newShip.MoveForward();
+
+#endregion
+
+        #endregion
         
-        
+
+
 
     }
 }

@@ -4,7 +4,7 @@ public class Cube : Shape
 {
     public double Depth { get; set; }
 
-    Cube(double width, double height, double depth):base(width, height)
+    public Cube(double width, double height, double depth):base(width, height)
     {
         Depth = depth;
     }

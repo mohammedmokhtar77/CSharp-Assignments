@@ -1,24 +1,14 @@
 namespace Assignment5;
 
-public class Car
+public class Car : IMoveable
 {
     public void MoveForward()
     {
-        Console.WriteLine("Car is moving forward.");
+        Console.WriteLine("Car is moving forward on the ground.");
     }
 
     public void MoveBackward()
     {
-        Console.WriteLine("Car is moving backward.");
-    }
-
-    public void MoveUp()
-    {
-        Console.WriteLine("Car is moving up.");
-    }
-
-    public void MoveDown()
-    {
-        Console.WriteLine("Car is moving down.");
+        Console.WriteLine("Car is moving backward on the ground.");
     }
 }

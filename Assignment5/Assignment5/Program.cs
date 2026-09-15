@@ -71,8 +71,22 @@ class Program
         #endregion  
 
         #endregion
-        
-        
+
+        #region Q9
+
+        /* Q9. (Pre-interface problem) Create a class Car with methods MoveForward() and 
+        MoveBackward() that just print messages. Now imagine you also need MoveUp()/MoveDown(). 
+            What is the problem with forcing every vehicle class to implement all four methods? (This is 
+            what interfaces solve.) 
+            
+        Problem:
+         Forcing every vehicle to implement all four methods (MoveForward, MoveBackward,
+         MoveUp, and MoveDown) leads to unnecessary and meaningless methods.
+         For example, a Car can move forward and backward but cannot move up or down.
+         Interfaces solve this problem by allowing each class to implement only the
+         behaviors that are relevant to it. */
+
+        #endregion
         
         
         

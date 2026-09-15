@@ -87,7 +87,40 @@ class Program
          behaviors that are relevant to it. */
 
         #endregion
+
+        #region Q10, Q11, Q12
+
+        // Create each class with its concrete type
+        Console.WriteLine("======== Car ========");
+        Car car = new Car();
+        car.MoveForward(); // Car is moving forward on the ground.
+        car.MoveBackward(); // Car is moving backward on the ground.
+
+        Console.WriteLine("======== Ship ========");
+        Ship ship = new Ship();
+        ship.MoveForward(); // Ship is moving forward on the ground.
+        ship.MoveBackward(); // Ship is moving backward on the ground.
+
+        Console.WriteLine("======== Airplane ========");
+        Airplane airplane = new Airplane();
+        airplane.MoveForward(); // Airplane is moving forward in the air.
+        airplane.MoveBackward(); // Airplane is moving backward in the air.
+        airplane.MoveUp(); // Airplane is moving up in the air.
+        airplane.MoveDown(); // Airplane is moving down in the air.
+
+
+        // Interface references
+        Console.WriteLine("======== InterfaceRef ========");
+        IMoveable carRef = new Car();
+        carRef.MoveForward(); // Car is moving forward on the ground.
+        carRef.MoveBackward(); // Car is moving backward on the ground.
         
+        IMoveable planeRef = new Airplane();
+        planeRef.MoveForward(); // Airplane is moving forward on the ground.
+        planeRef.MoveBackward(); // Airplane is moving backward on the ground.
+        
+
+        #endregion
         
         
 

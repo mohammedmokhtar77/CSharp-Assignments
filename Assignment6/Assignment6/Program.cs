@@ -81,5 +81,16 @@ class Program
         // Console.WriteLine($"P2 = {P2}");
 
         #endregion
+
+        #region Q4
+
+        Point3D p1 = new Point3D(10, 20, 30);
+        Point3D p2 = new Point3D(10, 20, 30); // Not Equals As == compare references
+        if(p1 == p2)
+            Console.WriteLine("Equals");
+        else
+            Console.WriteLine("Not equals");
+
+        #endregion
     }
 }

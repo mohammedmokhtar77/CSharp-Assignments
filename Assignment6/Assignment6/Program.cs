@@ -115,7 +115,10 @@ class Program
 
         #endregion
         
-        
+        Console.WriteLine(Math.Add(10, 5));
+        Console.WriteLine(Math.Subtract(10, 5));
+        Console.WriteLine(Math.Multiply(10, 5));
+        Console.WriteLine(Math.Divide(10, 5));
         
     }
 }

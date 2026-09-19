@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        #region Project One
+
         #region Q1 ,Q2
 
         // Point3D point3D = new Point3D (10,10,10);
@@ -93,18 +95,27 @@ class Program
 
         #endregion
 
-        Point3D[] points =
-        {
-            new Point3D(5, 10, 20),
-            new Point3D(2, 30, 40),
-            new Point3D(5, 5, 15),
-            new Point3D(1, 20, 30),
-            new Point3D(2, 10, 25)
-        };
-        Array.Sort(points);
-        foreach (Point3D point in points)
-        {
-            Console.WriteLine(point);
-        }
+        #region Q5
+
+        // Point3D[] points =
+        // {
+        //     new Point3D(5, 10, 20),
+        //     new Point3D(2, 30, 40),
+        //     new Point3D(5, 5, 15),
+        //     new Point3D(1, 20, 30),
+        //     new Point3D(2, 10, 25)
+        // };
+        // Array.Sort(points);
+        // foreach (Point3D point in points)
+        // {
+        //     Console.WriteLine(point);
+        // }
+
+#endregion
+
+        #endregion
+        
+        
+        
     }
 }

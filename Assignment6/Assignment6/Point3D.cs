@@ -1,6 +1,6 @@
 namespace Assignment6;
 
-public class Point3D
+public class Point3D : IComparable<Point3D>
 {
     public int X { get; set; }
     
@@ -26,6 +26,16 @@ public class Point3D
         X = x;
         Y = y;
         Z = z;
+    }
+
+    public int CompareTo(Point3D? other)
+    {
+        int result = X.CompareTo(other?.X);
+        if (result == 0)
+        {
+            result = Y.CompareTo(other?.Y);
+        }
+        return result;
     }
 
     public override string ToString()

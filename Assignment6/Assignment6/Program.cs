@@ -114,11 +114,27 @@ class Program
 #endregion
 
         #endregion
+
+        #region Second Project
+
+        // Console.WriteLine(Math.Add(10, 5));
+        // Console.WriteLine(Math.Subtract(10, 5));
+        // Console.WriteLine(Math.Multiply(10, 5));
+        // Console.WriteLine(Math.Divide(10, 5));
+
+        #endregion
         
-        Console.WriteLine(Math.Add(10, 5));
-        Console.WriteLine(Math.Subtract(10, 5));
-        Console.WriteLine(Math.Multiply(10, 5));
-        Console.WriteLine(Math.Divide(10, 5));
+        Duration d1 = new Duration(1, 10, 15);
+        Console.WriteLine(d1.ToString()); // Hours: 1, Minutes :10, Seconds :15
+        
+        Duration d2 = new Duration(3600);
+        Console.WriteLine(d2.ToString()); // Hours: 1, Minutes :0, Seconds :0
+
+        Duration d3 = new Duration(7800);
+        Console.WriteLine(d3.ToString()); // Hours: 2, Minutes :10, Seconds :0
+        
+        Duration d4 = new Duration(666);
+        Console.WriteLine(d4.ToString()); // Minutes :11, Seconds :6
         
     }
 }

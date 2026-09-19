@@ -4,6 +4,82 @@ class Program
 {
     static void Main(string[] args)
     {
+        #region Q1 ,Q2
+
+        // Point3D point3D = new Point3D (10,10,10);
+        // Console.WriteLine(point3D); // Point Coordinates: (10 , 10 , 10)
+
+        #endregion
+
+        #region Q3
+
+        // 1st Way
+        // Console.Write("Enter P1 coordinates (X Y Z): ");
+        // int[] p1Values = Array.ConvertAll(
+        //     Console.ReadLine()!.Split(' ', StringSplitOptions.RemoveEmptyEntries),
+        //     int.Parse
+        // );
+        //
+        // Point3D p1 = new Point3D(p1Values[0], p1Values[1], p1Values[2]);
+        //
+        // Console.Write("Enter P2 coordinates (X Y Z): ");
+        // int[] p2Values = Array.ConvertAll(
+        //     Console.ReadLine()!.Split(' ', StringSplitOptions.RemoveEmptyEntries),
+        //     int.Parse
+        // );
+        //
+        // Point3D p2 = new Point3D(p2Values[0], p2Values[1], p2Values[2]);
+        //
+        // Console.WriteLine($"P1 = {p1}");
+        // Console.WriteLine($"P2 = {p2}");
         
+        // 2nd Way 
+        // Console.WriteLine("Enter coordinates for P1 (X Y Z):");
+        //
+        // int x1, y1, z1;
+        //
+        // while (!int.TryParse(Console.ReadLine(), out x1))
+        // {
+        //     Console.Write("Invalid X. Enter again: ");
+        // }
+        //
+        // while (!int.TryParse(Console.ReadLine(), out y1))
+        // {
+        //     Console.Write("Invalid Y. Enter again: ");
+        // }
+        //
+        // while (!int.TryParse(Console.ReadLine(), out z1))
+        // {
+        //     Console.Write("Invalid Z. Enter again: ");
+        // }
+        //
+        // Point3D P1 = new Point3D(x1, y1, z1);
+        //
+        //
+        // Console.WriteLine("Enter coordinates for P2 (X Y Z):");
+        //
+        // int x2, y2, z2;
+        //
+        // while (!int.TryParse(Console.ReadLine(), out x2))
+        // {
+        //     Console.Write("Invalid X. Enter again: ");
+        // }
+        //
+        // while (!int.TryParse(Console.ReadLine(), out y2))
+        // {
+        //     Console.Write("Invalid Y. Enter again: ");
+        // }
+        //
+        // while (!int.TryParse(Console.ReadLine(), out z2))
+        // {
+        //     Console.Write("Invalid Z. Enter again: ");
+        // }
+        //
+        // Point3D P2 = new Point3D(x2, y2, z2);
+        //
+        // Console.WriteLine($"P1 = {P1}");
+        // Console.WriteLine($"P2 = {P2}");
+
+        #endregion
     }
 }

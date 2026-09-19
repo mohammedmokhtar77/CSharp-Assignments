@@ -124,6 +124,8 @@ class Program
 
         #endregion
 
+        #region Third Project
+
         #region Q1, Q2, Q3
 
         // Duration d1 = new Duration(1, 10, 15);
@@ -200,6 +202,8 @@ class Program
         {
             Console.WriteLine("D1 is zero.");
         }
+
+#endregion
 
         #endregion
         

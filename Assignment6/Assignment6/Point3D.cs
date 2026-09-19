@@ -1,6 +1,6 @@
 namespace Assignment6;
 
-public class Point3D : IComparable<Point3D>
+public class Point3D : IComparable<Point3D> , ICloneable
 {
     public int X { get; set; }
     
@@ -41,5 +41,10 @@ public class Point3D : IComparable<Point3D>
     public override string ToString()
     {
         return $"Point Coordinates: ({X} , {Y} , {Z})";
+    }
+
+    public object Clone()
+    {
+        return new Point3D(X, Y, Z);
     }
 }

@@ -1,6 +1,6 @@
 namespace Assignment6;
 
-public class Math
+public class Maths
 {
     public static int Add(int x, int y)
     {

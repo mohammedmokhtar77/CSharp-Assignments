@@ -26,6 +26,6 @@ public class Answer
     /// </returns>
     public override string ToString()
     {
-        return $"{AnswerId}- {AnswerText}";;
+        return $"{AnswerId}- {AnswerText}";
     }
 }

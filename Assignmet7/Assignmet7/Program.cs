@@ -1,4 +1,6 @@
-﻿namespace Assignmet7;
+﻿using System.Resources;
+
+namespace Assignmet7;
 
 class Program
 {
@@ -81,7 +83,18 @@ class Program
 
         #region Anonymous Types
 
+        var doctor1 = new { Name = "Sara", Specialty = "Cardiology", ExperienceYears = 8, Salary = 25_000 };
+        var doctor2 = new { Name = "Sara", Specialty = "Cardiology", ExperienceYears = 8, Salary = 25_000 };
+        Console.WriteLine(doctor1.Name);
+        Console.WriteLine(doctor2.Name);
+        Console.WriteLine(doctor1.GetHashCode());
+        Console.WriteLine(doctor2.GetHashCode());
+        Console.WriteLine(doctor1.GetType());
+        Console.WriteLine(doctor2.GetType());
+        Console.WriteLine(doctor1.Equals(doctor2));
         
+        // Anonymous types and records use value-based equality,
+        // while classes use reference-based equality by default.
 
         #endregion
     }

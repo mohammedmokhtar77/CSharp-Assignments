@@ -48,7 +48,12 @@ class Program
         
         // Class compares objects by reference by default,
         // while record compares objects by value (content) , override ToString , GetHashCode , Equals.
-        
+
+        Patient patient = new Patient()
+            { Id = 1, FullName = "Mohammed Mokhtar", PhoneNumber = "01111111111", MedicalHistory = "Good" };
+         PatientDto patientDto = PatientMapper.MapFromModelToDto(patient);
+         Console.WriteLine(patientDto);
+
         #endregion
     }
 }

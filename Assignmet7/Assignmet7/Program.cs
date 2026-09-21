@@ -49,11 +49,21 @@ class Program
         // Class compares objects by reference by default,
         // while record compares objects by value (content) , override ToString , GetHashCode , Equals.
 
-        Patient patient = new Patient()
-            { Id = 1, FullName = "Mohammed Mokhtar", PhoneNumber = "01111111111", MedicalHistory = "Good" };
-         PatientDto patientDto = PatientMapper.MapFromModelToDto(patient);
-         Console.WriteLine(patientDto);
+        // Patient patient = new Patient()
+        //     { Id = 1, FullName = "Mohammed Mokhtar", PhoneNumber = "01111111111", MedicalHistory = "Good" };
+        //  PatientDto patientDto = PatientMapper.MapFromModelToDto(patient);
+        //  Console.WriteLine(patientDto);
 
+        #endregion
+
+        #region Singleton
+
+        AppLogger logger1 = AppLogger.GetLogger();
+        AppLogger logger2 = AppLogger.GetLogger();
+
+        Console.WriteLine($"Log1 Hash Code : {logger1.GetHashCode()} :: Log2 Hash Code : {logger2.GetHashCode()} ");
+        Console.WriteLine(logger1 == logger2); // True
+        // Singleton ensures only one instance of AppLogger exists and provides global access to that instance.
         #endregion
     }
 }

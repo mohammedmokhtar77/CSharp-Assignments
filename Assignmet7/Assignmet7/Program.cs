@@ -83,18 +83,27 @@ class Program
 
         #region Anonymous Types
 
-        var doctor1 = new { Name = "Sara", Specialty = "Cardiology", ExperienceYears = 8, Salary = 25_000 };
-        var doctor2 = new { Name = "Sara", Specialty = "Cardiology", ExperienceYears = 8, Salary = 25_000 };
-        Console.WriteLine(doctor1.Name);
-        Console.WriteLine(doctor2.Name);
-        Console.WriteLine(doctor1.GetHashCode());
-        Console.WriteLine(doctor2.GetHashCode());
-        Console.WriteLine(doctor1.GetType());
-        Console.WriteLine(doctor2.GetType());
-        Console.WriteLine(doctor1.Equals(doctor2));
+        // var doctor1 = new { Name = "Sara", Specialty = "Cardiology", ExperienceYears = 8, Salary = 25_000 };
+        // var doctor2 = new { Name = "Sara", Specialty = "Cardiology", ExperienceYears = 8, Salary = 25_000 };
+        // Console.WriteLine(doctor1.Name);
+        // Console.WriteLine(doctor2.Name);
+        // Console.WriteLine(doctor1.GetHashCode());
+        // Console.WriteLine(doctor2.GetHashCode());
+        // Console.WriteLine(doctor1.GetType());
+        // Console.WriteLine(doctor2.GetType());
+        // Console.WriteLine(doctor1.Equals(doctor2));
         
         // Anonymous types and records use value-based equality,
         // while classes use reference-based equality by default.
+
+        #endregion
+
+        #region Extension Methods
+
+        string txt = "Ha";
+        Console.WriteLine(txt.IsShorterThan(3));
+        Console.WriteLine(txt.Repeat(3));
+
 
         #endregion
     }

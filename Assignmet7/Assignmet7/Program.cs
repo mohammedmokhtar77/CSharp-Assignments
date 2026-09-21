@@ -58,12 +58,25 @@ class Program
 
         #region Singleton
 
-        AppLogger logger1 = AppLogger.GetLogger();
-        AppLogger logger2 = AppLogger.GetLogger();
-
-        Console.WriteLine($"Log1 Hash Code : {logger1.GetHashCode()} :: Log2 Hash Code : {logger2.GetHashCode()} ");
-        Console.WriteLine(logger1 == logger2); // True
+        // AppLogger logger1 = AppLogger.GetLogger();
+        // AppLogger logger2 = AppLogger.GetLogger();
+        //
+        // Console.WriteLine($"Log1 Hash Code : {logger1.GetHashCode()} :: Log2 Hash Code : {logger2.GetHashCode()} ");
+        // Console.WriteLine(logger1 == logger2); // True
         // Singleton ensures only one instance of AppLogger exists and provides global access to that instance.
+        #endregion
+
+        #region var & dynamic
+
+        Patient p = new Patient(){Id = 1,FullName = "Mohammed",PhoneNumber = "01111111111",MedicalHistory = "None"};
+
+        var patient2 = new Patient(){Id = 2,FullName = "Ahmed",PhoneNumber = "01222222222",MedicalHistory = "Diabetes"};
+
+        dynamic patient3 = new Patient(){Id = 3,FullName = "Omar",PhoneNumber = "01555555555",MedicalHistory = "None"};
+        Console.WriteLine(patient3);
+
+        // var is resolved at compile time, while dynamic is resolved at run time.
+
         #endregion
     }
 }

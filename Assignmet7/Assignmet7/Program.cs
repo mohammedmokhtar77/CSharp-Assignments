@@ -27,22 +27,22 @@ class Program
         #endregion
 
         #region Records
-
-        PatientDto patientDto1 = new PatientDto(1, "Mohammed Mokhtar", "01111111111");
-        
-        PatientDto patientDto2 = new PatientDto(1, "Mohammed Mokhtar", "01111111111");
-
-        Console.WriteLine("Before");
-        Console.WriteLine($"Patient1 Hash Code : {patientDto1.GetHashCode()} " +
-                          $":: Patient Hash Code : {patientDto2.GetHashCode()} " +
-                          $":: Patient1 = Patient ? : {patientDto2.Equals(patientDto1)} ");
-        
-        patientDto2 = patientDto1;
-        
-        Console.WriteLine("After");
-        Console.WriteLine($"Patient1 Hash Code : {patientDto1.GetHashCode()} " +
-                          $":: Patient Hash Code : {patientDto2.GetHashCode()} " +
-                          $":: Patient1 = Patient ? : {patientDto2.Equals(patientDto1)} ");
+        //
+        // PatientDto patientDto1 = new PatientDto(1, "Mohammed Mokhtar", "01111111111");
+        //
+        // PatientDto patientDto2 = new PatientDto(1, "Mohammed Mokhtar", "01111111111");
+        //
+        // Console.WriteLine("Before");
+        // Console.WriteLine($"Patient1 Hash Code : {patientDto1.GetHashCode()} " +
+        //                   $":: Patient Hash Code : {patientDto2.GetHashCode()} " +
+        //                   $":: Patient1 = Patient ? : {patientDto2.Equals(patientDto1)} ");
+        //
+        // patientDto2 = patientDto1;
+        //
+        // Console.WriteLine("After");
+        // Console.WriteLine($"Patient1 Hash Code : {patientDto1.GetHashCode()} " +
+        //                   $":: Patient Hash Code : {patientDto2.GetHashCode()} " +
+        //                   $":: Patient1 = Patient ? : {patientDto2.Equals(patientDto1)} ");
 
         #endregion
         

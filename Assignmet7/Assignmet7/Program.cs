@@ -46,8 +46,9 @@ class Program
 
         #endregion
         
+        // Class compares objects by reference by default,
+        // while record compares objects by value (content) , override ToString , GetHashCode , Equals.
         
-
         #endregion
     }
 }

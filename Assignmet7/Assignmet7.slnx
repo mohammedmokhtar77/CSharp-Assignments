@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Assignment7.Tests/Assignment7.Tests.csproj" />
   <Project Path="Assignmet7/Assignmet7.csproj" />
 </Solution>

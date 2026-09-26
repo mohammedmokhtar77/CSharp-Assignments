@@ -1,9 +1,22 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Assign1Advanced;
 
 class Program
 {
+    public static void ReverseList(ArrayList arrayList)
+    {
+        int left = 0;
+        int right = arrayList.Count - 1;
+
+        while (left < right)
+        {
+            (arrayList[right] , arrayList[left]) = (arrayList[left], arrayList[right]);
+            left++;
+            right--;
+        }
+    }
     static void Main(string[] args)
     {
 
@@ -40,6 +53,17 @@ class Program
         // Console.WriteLine(range.IsInRange(15));
         // Console.WriteLine(range.IsInRange(30));
         // Console.WriteLine(range.Length());
+
+        #endregion
+
+        #region Reverse the order of elements in the ArrayList in-place
+
+        ArrayList arrayList = new ArrayList(){1 , 2 , 3 , 4 , 5 , "Mokhtar"};
+        ReverseList(arrayList);
+        foreach (var item in arrayList)
+        {
+            Console.WriteLine(item);
+        }
 
         #endregion
         

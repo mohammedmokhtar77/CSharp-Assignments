@@ -17,6 +17,17 @@ class Program
             right--;
         }
     }
+
+    public static List<int> EvenNumbers(List<int> numbers)
+    {
+        List<int> evenNumbers = new List<int>();
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            if (numbers[i] % 2 == 0)
+                evenNumbers.Add(numbers[i]);
+        }
+        return evenNumbers;
+    }
     static void Main(string[] args)
     {
 
@@ -58,16 +69,24 @@ class Program
 
         #region Reverse the order of elements in the ArrayList in-place
 
-        ArrayList arrayList = new ArrayList(){1 , 2 , 3 , 4 , 5 , "Mokhtar"};
-        ReverseList(arrayList);
-        foreach (var item in arrayList)
-        {
-            Console.WriteLine(item);
-        }
+        // ArrayList arrayList = new ArrayList(){1 , 2 , 3 , 4 , 5 , "Mokhtar"};
+        // ReverseList(arrayList);
+        // foreach (var item in arrayList)
+        // {
+        //     Console.WriteLine(item);
+        // }
 
         #endregion
-        
-        
+
+        List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        List<int> evenNumbers =  EvenNumbers(list);
+
+        foreach (int number in evenNumbers)
+        {
+            Console.WriteLine(number);
+        }
+
+
     }
     
 }

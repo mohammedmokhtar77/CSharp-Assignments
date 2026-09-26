@@ -78,13 +78,30 @@ class Program
 
         #endregion
 
-        List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        List<int> evenNumbers =  EvenNumbers(list);
+        #region Even Numbers
 
-        foreach (int number in evenNumbers)
-        {
-            Console.WriteLine(number);
-        }
+        // List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // List<int> evenNumbers =  EvenNumbers(list);
+        //
+        // foreach (int number in evenNumbers)
+        // {
+        //     Console.WriteLine(number);
+        // }
+
+        #endregion
+        
+        FixedSizeList<int> list = new FixedSizeList<int>(3);
+
+        list.Add(10);
+        list.Add(20);
+        list.Add(30);
+
+        Console.WriteLine(list.Get(0)); 
+        Console.WriteLine(list.Get(1)); 
+        Console.WriteLine(list.Get(2)); 
+        
+        // list.Add(40);
+        // Console.WriteLine(list.Get(3));
 
 
     }

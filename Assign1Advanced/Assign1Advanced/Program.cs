@@ -33,7 +33,15 @@ class Program
 
         }
         #endregion
-        
+
+        #region Generic Range
+
+        Range<int> range = new Range<int>(10, 20);
+        Console.WriteLine(range.IsInRange(15));
+        Console.WriteLine(range.IsInRange(30));
+        Console.WriteLine(range.Length());
+
+        #endregion
     }
     
 }

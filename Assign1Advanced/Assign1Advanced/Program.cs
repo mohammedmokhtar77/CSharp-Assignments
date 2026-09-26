@@ -28,6 +28,30 @@ class Program
         }
         return evenNumbers;
     }
+
+    public static int FirstNonRepeatedChar(string text)
+    {
+        text = text.ToLower();
+        
+        Dictionary<char, int> dict = new Dictionary<char, int>();
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            if(dict.ContainsKey(text[i]))
+                dict[text[i]]++;
+            else
+                dict.Add(text[i], 1);
+        }
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (dict[text[i]] == 1)
+                return i;
+        }
+
+        return -1;
+    }
+
     static void Main(string[] args)
     {
 
@@ -89,19 +113,27 @@ class Program
         // }
 
         #endregion
-        
-        FixedSizeList<int> list = new FixedSizeList<int>(3);
 
-        list.Add(10);
-        list.Add(20);
-        list.Add(30);
+        #region Fixed Size List
 
-        Console.WriteLine(list.Get(0)); 
-        Console.WriteLine(list.Get(1)); 
-        Console.WriteLine(list.Get(2)); 
+        // FixedSizeList<int> list = new FixedSizeList<int>(3);
+        //
+        // list.Add(10);
+        // list.Add(20);
+        // list.Add(30);
+        //
+        // Console.WriteLine(list.Get(0)); 
+        // Console.WriteLine(list.Get(1)); 
+        // Console.WriteLine(list.Get(2)); 
         
         // list.Add(40);
         // Console.WriteLine(list.Get(3));
+
+        #endregion
+
+        string text = "Mohammed";
+        Console.WriteLine(FirstNonRepeatedChar(text));
+
 
 
     }

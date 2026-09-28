@@ -19,5 +19,26 @@ class Program
     }
     static void Main(string[] args)
     {
+        List<Book> books =
+        [
+
+            new(
+                "111",
+                "Clean Code",
+                ["Robert C. Martin"],
+                new DateTime(2008, 8, 1),
+                500m
+            ),
+            
+            new(
+                "222",
+                "C# in Depth",
+                ["Jon Skeet"],
+                new DateTime(2019, 3, 15),
+                700m
+            )
+        ];
+        
+        
     }
 }

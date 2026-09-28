@@ -2,7 +2,6 @@
 
 class Program
 {
-    
     public static void ProcessBooksUserDefined(List<Book> books, BookFunction bookFunction)
     {
         foreach (Book book in books)
@@ -65,7 +64,23 @@ class Program
         ProcessBooksBuiltIn(books , book => book.PublicationDate.ToString());
 
         #endregion
-        
+
+        #region User-Defined Delegate 
+
+        Order order = new Order
+        {
+            Id = 1,
+            CustomerName = "Mohamed",
+            Price = 500,
+            Quantity = 3
+        };
+        decimal total = OrderFunctions.CalculateOrderPrice(order, OrderFunctions.CalculateTotal);
+        decimal totalWithDiscount = OrderFunctions.CalculateOrderPrice(order, OrderFunctions.CalculateTotalWithDiscount);
+        Console.WriteLine(total);
+        Console.WriteLine(totalWithDiscount);
+
+        #endregion
+
 
     }
 }

@@ -65,8 +65,6 @@ class Program
 
         #endregion
 
-        #region User-Defined Delegate 
-
         Order order = new Order
         {
             Id = 1,
@@ -74,12 +72,24 @@ class Program
             Price = 500,
             Quantity = 3
         };
-        decimal total = OrderFunctions.CalculateOrderPrice(order, OrderFunctions.CalculateTotal);
-        decimal totalWithDiscount = OrderFunctions.CalculateOrderPrice(order, OrderFunctions.CalculateTotalWithDiscount);
+        #region User-Defined Delegate 
+
+        decimal total = OrderFunctions.CalculateOrderPriceUserDefined(order, OrderFunctions.CalculateTotal);
+        decimal totalWithDiscount = OrderFunctions.CalculateOrderPriceUserDefined(order, OrderFunctions.CalculateTotalWithDiscount);
         Console.WriteLine(total);
         Console.WriteLine(totalWithDiscount);
 
         #endregion
+
+        #region Func
+
+        decimal totalFunc = OrderFunctions.CalculateOrderPriceFunc(order, OrderFunctions.CalculateTotal);
+        decimal totalWithDiscountFunc = OrderFunctions.CalculateOrderPriceFunc(order, OrderFunctions.CalculateTotalWithDiscount);
+        Console.WriteLine(totalFunc);
+        Console.WriteLine(totalWithDiscountFunc);
+
+        #endregion
+
 
 
     }

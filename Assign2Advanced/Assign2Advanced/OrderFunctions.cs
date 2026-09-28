@@ -14,7 +14,11 @@ public class OrderFunctions
         return total - discount;
     }
 
-    public static decimal CalculateOrderPrice(Order order, PriceCalculator calculator)
+    public static decimal CalculateOrderPriceUserDefined(Order order, PriceCalculator calculator)
+    {
+        return calculator(order);
+    }
+    public static decimal CalculateOrderPriceFunc(Order order, Func<Order, decimal> calculator)
     {
         return calculator(order);
     }

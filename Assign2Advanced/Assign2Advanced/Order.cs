@@ -10,5 +10,7 @@ public class Order
     
     public decimal Price { get; set; } 
     
-    public int Quantity { get; set; } 
+    public int Quantity { get; set; }
+
+    public override string ToString() => $"Order {Id} :: Customer: {CustomerName} :: Price: {Price} :: Quantity: {Quantity}";
 }

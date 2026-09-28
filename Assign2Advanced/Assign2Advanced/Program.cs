@@ -2,6 +2,11 @@
 
 class Program
 {
+    public static bool ValidateOrder(Order order, Predicate<Order> validationRule)
+    {
+        return validationRule(order);
+    }
+
     public static void ProcessBooksUserDefined(List<Book> books, BookFunction bookFunction)
     {
         foreach (Book book in books)
@@ -89,6 +94,18 @@ class Program
         Console.WriteLine(totalWithDiscountFunc);
 
         #endregion
+
+        #region Predicate
+
+        bool validQuantity = ValidateOrder(order, order => order.Quantity > 0);
+        Console.WriteLine(validQuantity);
+        bool validPrice = ValidateOrder(order, order => order.Price > 0);
+        Console.WriteLine(validPrice);
+        bool validCustomerName = ValidateOrder(order, order => !string.IsNullOrEmpty(order.CustomerName));
+        Console.WriteLine(validCustomerName);
+
+        #endregion
+
 
 
 

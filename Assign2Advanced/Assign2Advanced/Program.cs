@@ -133,7 +133,16 @@ class Program
 
         #endregion
 
-        
+        #region Bonus Challenge
+
+        decimal normalPrice = orderService.CalculateOrderPrice(order, PricingStrategies.CalculateNormalPrice);
+        decimal discount10 = orderService.CalculateOrderPrice(order, PricingStrategies.CalculatePriceWith10PercentDiscount);
+        decimal discount20 = orderService.CalculateOrderPrice(order, PricingStrategies.CalculatePriceWith20PercentDiscount);
+        decimal vipPrice = orderService.CalculateOrderPrice(order, PricingStrategies.CalculateVipPrice);
+        Console.WriteLine($"Normal: {normalPrice} :: Discount10: {discount10} :: Discount20: {discount20}:: Vip: {vipPrice}");
+
+        #endregion
+
 
     }
 }

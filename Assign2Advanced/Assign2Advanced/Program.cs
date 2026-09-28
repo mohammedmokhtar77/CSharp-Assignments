@@ -1,7 +1,15 @@
-﻿namespace Assign2Advanced;
+﻿using System.Globalization;
+
+namespace Assign2Advanced;
 
 class Program
 {
+    public static void ProcessOrder(Order order, Action<Order> action)
+    {
+        Console.WriteLine($"Processing Order {order.Id}");
+        action(order);
+    } 
+
     public static bool ValidateOrder(Order order, Predicate<Order> validationRule)
     {
         return validationRule(order);
@@ -106,6 +114,14 @@ class Program
 
         #endregion
 
+        #region Action
+
+        ProcessOrder(order, order => Console.WriteLine(order));
+        ProcessOrder(order , order => Console.WriteLine($"Confirmation Sent To: {order.CustomerName}"));
+        ProcessOrder(order, order => Console.WriteLine($"AUDIT: Order {order.Id} processed."));
+        
+
+        #endregion
 
 
 

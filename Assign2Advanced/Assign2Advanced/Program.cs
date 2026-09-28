@@ -1,35 +1,33 @@
-﻿using System.Globalization;
-
-namespace Assign2Advanced;
+﻿namespace Assign2Advanced;
 
 class Program
 {
-    public static void ProcessOrder(Order order, Action<Order> action)
+    static void ProcessOrder(Order order, Action<Order> action)
     {
         Console.WriteLine($"Processing Order {order.Id}");
         action(order);
     } 
 
-    public static bool ValidateOrder(Order order, Predicate<Order> validationRule)
+    static bool ValidateOrder(Order order, Predicate<Order> validationRule)
     {
         return validationRule(order);
     }
 
-    public static void ProcessBooksUserDefined(List<Book> books, BookFunction bookFunction)
+     static void ProcessBooksUserDefined(List<Book> books, BookFunction bookFunction)
     {
         foreach (Book book in books)
         {
             Console.WriteLine(bookFunction(book));
         }
     }
-    public static void ProcessBooksBuiltIn(List<Book> books, Func<Book, string> bookFunction)
+    static void ProcessBooksBuiltIn(List<Book> books, Func<Book, string> bookFunction)
     {
         foreach (Book book in books)
         {
             Console.WriteLine(bookFunction(book));
         }
     }
-    static void Main(string[] args)
+    static void Main()
     {
         List<Book> books =
         [
@@ -74,17 +72,18 @@ class Program
 
         #region Lambda — PublicationDate
 
-        ProcessBooksBuiltIn(books , book => book.PublicationDate.ToString());
+        ProcessBooksBuiltIn(books , b => b.PublicationDate.ToString());
 
         #endregion
 
         Order order = new Order
         {
             Id = 1,
-            CustomerName = "Mohamed",
+            CustomerName = "Mohammed",
             Price = 500,
             Quantity = 3
         };
+        
         #region User-Defined Delegate 
 
         decimal total = OrderFunctions.CalculateOrderPriceUserDefined(order, OrderFunctions.CalculateTotal);
@@ -105,25 +104,36 @@ class Program
 
         #region Predicate
 
-        bool validQuantity = ValidateOrder(order, order => order.Quantity > 0);
+        bool validQuantity = ValidateOrder(order, o => o.Quantity > 0);
         Console.WriteLine(validQuantity);
-        bool validPrice = ValidateOrder(order, order => order.Price > 0);
+        bool validPrice = ValidateOrder(order, o => o.Price > 0);
         Console.WriteLine(validPrice);
-        bool validCustomerName = ValidateOrder(order, order => !string.IsNullOrEmpty(order.CustomerName));
+        bool validCustomerName = ValidateOrder(order, o => !string.IsNullOrEmpty(o.CustomerName));
         Console.WriteLine(validCustomerName);
 
         #endregion
 
         #region Action
 
-        ProcessOrder(order, order => Console.WriteLine(order));
-        ProcessOrder(order , order => Console.WriteLine($"Confirmation Sent To: {order.CustomerName}"));
-        ProcessOrder(order, order => Console.WriteLine($"AUDIT: Order {order.Id} processed."));
+        ProcessOrder(order, o => Console.WriteLine(o.ToString()));
+        ProcessOrder(order , OrderEventHandlers.SendOrderNotification);
+        ProcessOrder(order, OrderEventHandlers.WriteOrderAudit);
         
 
         #endregion
 
+        #region Events & Events Subscription
 
+        OrderService orderService = new OrderService();
+        orderService.OrderProcessed += OrderEventHandlers.PrintOrderProcessed;
+        orderService.OrderProcessed += OrderEventHandlers.SendOrderNotification;
+        orderService.OrderProcessed += OrderEventHandlers.WriteOrderAudit;
+        orderService.OrderProcessed -= OrderEventHandlers.PrintOrderProcessed;
+        orderService.ProcessOrder(order);
+
+        #endregion
+
+        
 
     }
 }

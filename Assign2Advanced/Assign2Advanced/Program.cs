@@ -38,7 +38,34 @@ class Program
                 700m
             )
         ];
+
+        #region User-defined Delegate
+
+        ProcessBooksUserDefined(books, BookFunctions.GetTitle);
+
+        #endregion
+
+        #region Built-in Delegate
+
+        ProcessBooksBuiltIn(books, BookFunctions.GetTitle);
+
+        #endregion
+
+        #region Anonymous Method — ISBN
+
+        ProcessBooksBuiltIn(books, book =>
+        {
+            return book.ISBN;
+        });
+
+        #endregion
+
+        #region Lambda — PublicationDate
+
+        ProcessBooksBuiltIn(books , book => book.PublicationDate.ToString());
+
+        #endregion
         
-        
+
     }
 }

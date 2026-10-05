@@ -136,5 +136,106 @@ class Program
         #endregion
 
         #endregion
+
+        #region Ordering Operators (Deferred Execution)
+
+        #region 1. Sort a list of products by name
+
+        // var sortedProductsByName = ProductsList.OrderBy(p => p.ProductName);
+        // foreach (var product in sortedProductsByName)
+        // {
+        //     Console.WriteLine(product);
+        // }
+
+        #endregion
+
+        #region  2. Uses a custom comparer to do a case-insensitive sort of the words in an array.
+
+        // String [] Arr = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
+        //
+        // var sortedWordsCaseInsensitive = Arr.OrderBy(word => word, StringComparer.OrdinalIgnoreCase);
+        // foreach (var word in sortedWordsCaseInsensitive)
+        // {
+        //     Console.WriteLine(word);
+        // }
+
+
+        #endregion
+
+        #region 3. Sort a list of products by units in stock from highest to lowest.
+
+        // var sortedProductsByUnitsInStock = ProductsList.OrderByDescending(p => p.UnitsInStock);
+        // foreach (var product in sortedProductsByUnitsInStock)
+        // {
+        //     Console.WriteLine(product);
+        // }
+
+
+        #endregion
+
+        #region 4. Sort a list of digits, first by length of their name, and then alphabetically by the name itself.
+
+        // string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        // var sortedDigitsByLengthThenAlphabetically = Arr.OrderBy(d => d.Length)
+        //                                                                     .ThenBy(d => d);
+        // foreach (var d in sortedDigitsByLengthThenAlphabetically)
+        // {
+        //     Console.WriteLine(d);
+        // }
+        
+        #endregion
+       
+        string [] Arr = ["aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"]; 
+
+        #region 5. Sort first by-word length and then by a case-insensitive sort of the words in an array. 
+        
+        // var sortWordsByLengthThenCaseInsensitive = Arr.OrderBy(word => word.Length)
+        //                                         .ThenBy(word => word, StringComparer.OrdinalIgnoreCase);
+        // foreach (var word in sortWordsByLengthThenCaseInsensitive)
+        // {
+        //     Console.WriteLine(word);
+        // }
+
+
+        #endregion
+
+        #region 6. Sort a list of products, first by category, and then by unit price, from highest to lowest.
+
+        // var sortedProductsByCategoryThenUnitPrice = ProductsList.OrderByDescending(p => p.Category)
+        //     .ThenByDescending(p => p.UnitPrice);
+        // foreach (var product in sortedProductsByCategoryThenUnitPrice)
+        // {
+        //     Console.WriteLine(product);
+        // }
+
+        #endregion
+
+        #region 7. Sort first by-word length and then by a case-insensitive descending sort of the words in an array. 
+
+        // var sortWordsDescendingByLengthThenCaseInsensitive = Arr.OrderByDescending(word => word.Length)
+        //                                         .ThenByDescending(word => word, StringComparer.OrdinalIgnoreCase);
+        // foreach (var word in sortWordsDescendingByLengthThenCaseInsensitive)
+        // {
+        //     Console.WriteLine(word);
+        // }
+
+        #endregion
+
+        #region 8. Create a list of all digits in the array whose second letter is 'i' that is reversed from the order in the original array. 
+
+        // string[] arr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+        // var result = arr
+        //     .Where(word => char.ToLower(word[1]) == 'i')
+        //     .Reverse();
+        // foreach (var item in result)
+        // {
+        //     Console.WriteLine(item);
+        // }
+
+
+        #endregion
+
+
+        #endregion
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Day_01_G03
+namespace Assignment1
 {
 
 	class Product : IComparable<Product>

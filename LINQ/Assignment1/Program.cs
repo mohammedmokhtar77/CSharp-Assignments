@@ -3,13 +3,13 @@ namespace Assignment1;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         #region Restriction Operators (Deferred Execution)
 
         #region 1. Find all products that are out of stock.
         
-        // var productsOutOfStock = ProductsList.Where(p => p.UnitsInStock == 0);
+         var productsOutOfStock = ProductsList.Where(p => p.UnitsInStock == 0);
         // foreach (var product in productsOutOfStock)
         //     Console.WriteLine(product);
         
@@ -104,7 +104,7 @@ class Program
 
         #endregion
 
-        string[] words = File.ReadAllLines("dictionary_english.txt");
+        // string[] words = File.ReadAllLines("dictionary_english.txt");
         
         #region 5. Get the total number of characters of all words in dictionary_english.txt. 
         
@@ -185,11 +185,11 @@ class Program
         
         #endregion
        
-        string [] arr = ["aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"]; 
+        // string [] arr = ["aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"]; 
 
         #region 5. Sort first by-word length and then by a case-insensitive sort of the words in an array. 
         
-        // var sortWordsByLengthThenCaseInsensitive = Arr.OrderBy(word => word.Length)
+        // var sortWordsByLengthThenCaseInsensitive = arr.OrderBy(word => word.Length)
         //                                         .ThenBy(word => word, StringComparer.OrdinalIgnoreCase);
         // foreach (var word in sortWordsByLengthThenCaseInsensitive)
         // {
@@ -235,6 +235,95 @@ class Program
 
         #endregion
 
+
+        #endregion
+
+        #region Transformation Operators (Deferred Execution)
+
+        #region 1. Return a sequence of just the names of a list of products.
+
+        // var prouductNames = ProductsList.Select(p => p.ProductName);
+        // foreach (var name in prouductNames)
+        //     Console.WriteLine(name);
+
+
+        #endregion
+
+        #region 2. Produce a sequence of the uppercase and lowercase versions of each word in the original array (Anonymous Types). 
+
+        // string[] words = {"aPPLE", "BlUeBeRrY", "cHeRry"};
+        // var upperLowerWords = words.Select(word => new { UpperCase = word.ToUpper(), LowerCase = word.ToLower() });
+        // foreach (var word in upperLowerWords)
+        // {
+        //     Console.WriteLine($"Uppercase: {word.UpperCase}, Lowercase: {word.LowerCase}");
+        // }
+        
+
+
+        #endregion
+
+        #region 3. Produce a sequence containing some properties of Products, including UnitPrice which is renamed to Price in the resulting type.
+
+        // var productProperties = ProductsList.Select(p => new
+        // {
+        //     ProductName = p.ProductName,
+        //     Category = p.Category,
+        //     Price = p.UnitPrice
+        // });
+        // foreach (var product in productProperties)
+        // {
+        //     Console.WriteLine($"Product: {product.ProductName}, Category: {product.Category}, Price: {product.Price}");
+        // }
+
+        #endregion
+
+        #region 4. Determine if the value of int in an array match their position in the array. 
+
+
+        // int[] arr = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        // var matchingPositions = arr.Select((value, i) => new { Value = value, Index = (i == value) });
+        // foreach (var match in matchingPositions)
+        // {
+        //     Console.WriteLine($"Value: {match.Value}, Index: {match.Index}");
+        // }
+
+
+        #endregion
+
+        #region 5. Returns all pairs of numbers from both arrays such that the number from numbersA is less than the number from numbersB
+
+        // int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 }; 
+        // int[] numbersB = { 1, 3, 5, 7, 8 };
+        //
+        // var pairs = numbersA.SelectMany(a => numbersB, (a, b) => new { A = a, B = b })
+        //     .Where(pair => pair.A < pair.B);
+        // foreach (var pair in pairs)
+        //     Console.WriteLine($"{pair.A} is less than {pair.B}");
+
+        #endregion
+
+        #region 6. Select all orders where the order total is less than 500.00.
+
+
+        // var ordersLessThan500 = CustomersList.SelectMany(c => c.Orders, (c, o) => new { Customer = c, Order = o })
+        //     .Where(c => c.Order.Total < 500.00m);
+        // foreach (var order in ordersLessThan500)
+        // {
+        //     Console.WriteLine(order.Customer.CustomerName + " has an order with total less than 500.00: " + order.Order.Total);
+        // }
+
+        #endregion
+
+        #region 7. Select all orders where the order was made in 1998 or later.
+
+        var ordersFrom1998OrLater = CustomersList.SelectMany(c => c.Orders, (c, o) => new { Customer = c, Order = o })
+            .Where(c => c.Order.OrderDate.Year >= 1998);
+        foreach (var order in ordersFrom1998OrLater)
+        {
+            Console.WriteLine($"{order.Customer.CustomerName} has an order from {order.Order.OrderDate.ToShortDateString()} with total {order.Order.Total}");
+        }
+
+        #endregion
 
         #endregion
     }

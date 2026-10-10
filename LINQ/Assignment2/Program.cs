@@ -235,11 +235,50 @@ class Program
 
         #region 2. Produce a Sequence containing the unique first letter from both product and customer names.
 
-        var uniqueLetters = ProductsList.Select(p =>p.ProductName[0])
-            .Concat(CustomersList.Select(c => c.CustomerName[0]))
-            .Distinct();
-        foreach (var item in uniqueLetters)
-            Console.Write($"{item} ");
+        // var uniqueLetters = ProductsList.Select(p =>p.ProductName[0])
+        //     .Concat(CustomersList.Select(c => c.CustomerName[0]))
+        //     .Distinct();
+        // foreach (var item in uniqueLetters)
+        //     Console.Write($"{item} ");
+
+        #endregion
+
+        #region 3. Create one sequence that contains the common first letter from both product and customer names.
+
+        // var commonFirstLetter = ProductsList.Select(p => p.ProductName[0])
+        //     .Intersect(CustomersList.Select(c => c.CustomerName[0]));
+        // foreach (var letter in commonFirstLetter)
+        // {
+        //     Console.Write($"{letter} ");
+        // }
+
+
+
+        #endregion
+
+        #region 4. Create one sequence that contains the first letters of product names that are not also first letters of customer names. 
+
+        // var uniqueFirstLetters = ProductsList
+        //     .Select(p => p.ProductName[0])
+        //     .Except(CustomersList.Select(c => c.CustomerName[0]));
+        //
+        // foreach (var letter in uniqueFirstLetters)
+        // {
+        //     Console.Write($"{letter} ");
+        // }
+
+        #endregion
+
+        #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates 
+
+        var lastThreeCharacters = CustomersList
+            .Select(c => c.CustomerName.Substring(c.CustomerName.Length - 3))
+            .Concat(ProductsList.Select(p => p.ProductName.Substring(p.ProductName.Length - 3)));
+
+        foreach (var item in lastThreeCharacters)
+        {
+            Console.WriteLine(item);
+        }
 
         #endregion
 

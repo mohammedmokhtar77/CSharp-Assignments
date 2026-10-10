@@ -39,5 +39,17 @@ class Program
         
 
         #endregion
+
+        #region Aggregate Operators
+
+        #region 1. Uses Count to get the number of odd numbers in the array 
+        
+        int[] arr = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        var oddNumbersCount = arr.Count(x => x % 2 != 0);
+        Console.WriteLine(oddNumbersCount);
+
+        #endregion
+
+        #endregion
     }
 }

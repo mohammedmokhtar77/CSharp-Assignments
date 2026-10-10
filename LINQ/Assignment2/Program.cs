@@ -220,5 +220,19 @@ class Program
 
 
         #endregion
+
+        #region Set Operators
+
+        #region 1. Find the unique Category names from Product List
+
+
+        var uniqueCategories = ProductsList.Select(x => x.Category)
+            .Distinct().ToList();
+        foreach (var category in uniqueCategories)
+            Console.WriteLine(category);
+
+        #endregion
+
+        #endregion
     }
 }

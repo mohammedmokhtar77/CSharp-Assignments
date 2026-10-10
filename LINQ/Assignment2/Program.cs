@@ -44,9 +44,9 @@ class Program
 
         #region 1. Uses Count to get the number of odd numbers in the array 
         
-        int[] arr = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-        var oddNumbersCount = arr.Count(x => x % 2 != 0);
-        Console.WriteLine(oddNumbersCount);
+        // int[] arr = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        // var oddNumbersCount = arr.Count(x => x % 2 != 0);
+        // Console.WriteLine(oddNumbersCount);
 
         #endregion
 
@@ -76,21 +76,148 @@ class Program
         #endregion
 
         #region 4. Get the total of the numbers in an array.
-
-        var totalNumbers = arr.Sum();
-        Console.WriteLine(totalNumbers);
+        
+        // var totalNumbers = arr.Sum();
+        // Console.WriteLine(totalNumbers);
 
         #endregion
 
         #region 5. Get the total number of characters of all words in dictionary_english.txt
 
         string[] words = File.ReadAllLines("dictionary_english.txt");
-        var totalNumberOfCharacters = words.SelectMany(w => w)
-                                    .Count();
-        Console.WriteLine(totalNumberOfCharacters);
+        // var totalNumberOfCharacters = words.SelectMany(w => w)
+        //                             .Count();
+        // Console.WriteLine(totalNumberOfCharacters);
 
 
         #endregion
+
+        #region 6. Get the length of the shortest word in dictionary_english.txt
+
+        // var shortestWord = words.Min(x => x.Length);
+        // Console.WriteLine(shortestWord);
+
+        #endregion
+
+        #region 7. Get the length of the longest word in dictionary_english.txt
+
+        // var longestWord = words.Max(x => x.Length);
+        // Console.WriteLine(longestWord);
+
+        #endregion
+
+        #region 8. Get the average length of the words in dictionary_english.txt 
+
+        // var averageWords = words.Average(word => word.Length);
+        // Console.WriteLine(averageWords);
+
+        #endregion
+
+        #region 9. Get the total units in stock for each product category.
+
+        // var totalUnitsInStock =
+        //     from p in ProductsList
+        //     group p by p.Category into g
+        //     select new
+        //     {
+        //         ProductCategory = g.Key,
+        //         TotalUnitsInStock = g.Sum(p => p.UnitsInStock)
+        //     };
+        // foreach (var item in totalUnitsInStock)
+        //     Console.WriteLine($"{item.ProductCategory} : {item.TotalUnitsInStock}");
+
+        #endregion
+
+        #region 10. Get the cheapest price among each category's products
+
+        // var cheapestPriceForCategory = from p in ProductsList
+        //     group p by p.Category
+        //     into g
+        //     select new { ProuctCategory = g.Key, CheapestPrice = g.Min(p => p.UnitPrice) };
+        // foreach (var item in cheapestPriceForCategory)
+        // {
+        //     Console.WriteLine($"{item.ProuctCategory} : {item.CheapestPrice}");
+        // }
+
+        #endregion
+
+        #region 11. Get the products with the cheapest price in each category
+
+        // var cheapestProducts =
+        //     from p in ProductsList
+        //     group p by p.Category into g
+        //     let cheapestPrice = g.Min(p => p.UnitPrice)
+        //     from product in g
+        //     where product.UnitPrice == cheapestPrice
+        //     select new
+        //     {
+        //         ProductCategory = g.Key,
+        //         ProductName = product.ProductName,
+        //         Price = product.UnitPrice
+        //     };
+        // foreach (var product in cheapestProducts)
+        // {
+        //     Console.WriteLine($"Category: {product.ProductCategory},Product: {product.ProductName},Price: {product.Price}");
+        // }
+
+        #endregion
+
+        #region 12. Get the most expensive price among each category's products.
+
+        // var expensivePriceForCategory = from p in ProductsList
+        //     group p by p.Category into g
+        //         select new { Category = g.Key, ExpensivePrice = g.Max(p => p.UnitPrice) };
+        // foreach (var item in expensivePriceForCategory)
+        // {
+        //     Console.WriteLine($"{item.Category} - {item.ExpensivePrice}");
+        // }
+
+        #endregion
+
+        #region 13. Get the products with the most expensive price in each category
+
+        // var expensiveProducts = from p in ProductsList
+        //     group p by p.Category
+        //     into g
+        //     let ExpensivePrice = g.Max(p => p.UnitPrice)
+        //     from product in g
+        //     where product.UnitPrice == ExpensivePrice
+        //     select new
+        //     {
+        //         ProductCategory = g.Key,
+        //         ProductName = product.ProductName,
+        //         Price = product.UnitPrice
+        //     };
+        // foreach (var product in expensiveProducts)
+        // {
+        //     Console.WriteLine($"Category: {product.ProductCategory},Product: {product.ProductName},Price: {product.Price}");
+        // }
+
+
+        #endregion
+
+        #region 14. Get the average price of each category's products.
+
+        // var averagePricePerCategory =
+        //     from p in ProductsList
+        //     group p by p.Category into g
+        //     select new
+        //     {
+        //         ProductCategory = g.Key,
+        //         AveragePrice = g.Average(p => p.UnitPrice)
+        //     };
+        //
+        // foreach (var item in averagePricePerCategory)
+        // {
+        //     Console.WriteLine(
+        //         $"Category: {item.ProductCategory}, Average Price: {item.AveragePrice:F2}");
+        // }
+
+        #endregion
+
+
+
+
 
         #endregion
     }

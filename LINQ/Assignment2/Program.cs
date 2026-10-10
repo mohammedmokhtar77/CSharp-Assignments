@@ -304,12 +304,35 @@ class Program
 
         #region 2. Return elements starting from the beginning of the array until a number is hit that is less than its position in the array. 
 
+        // int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        // var result = numbers.TakeWhile((num, index) => num > index);
+        // foreach (var num in result)
+        // {
+        //     Console.Write($"{num} ");
+        // }
+
+
+        #endregion
+
+        #region 3.Get the elements of the array starting from the first element divisible by 3. 
+        
         int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-        var result = numbers.TakeWhile((num, index) => num > index);
-        foreach (var num in result)
+        // var result = numbers.SkipWhile(n => n % 3 != 0);
+        // foreach (var number in result)
+        // {
+        //     Console.Write($"{number} ");
+        // }
+
+        #endregion
+
+        #region 4. Get the elements of the array starting from the first element less than its position.
+
+        var result = numbers.SkipWhile((n, i) => n > i);
+        foreach (int number in result)
         {
-            Console.Write($"{num} ");
+            Console.Write($"{number} ");
         }
+        
 
 
         #endregion

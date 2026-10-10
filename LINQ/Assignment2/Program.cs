@@ -316,7 +316,7 @@ class Program
 
         #region 3.Get the elements of the array starting from the first element divisible by 3. 
         
-        int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        // int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
         // var result = numbers.SkipWhile(n => n % 3 != 0);
         // foreach (var number in result)
         // {
@@ -365,22 +365,45 @@ class Program
 
         #region 3. Return a grouped a list of products only for categories that have all of their products in stock.
 
-        var productsWithAllInStock =
-            ProductsList.GroupBy(p => p.Category)
-                .Where(g => g.All(p => p.UnitsInStock != 0));
-        
-        foreach (var category in productsWithAllInStock)
-        {
-            Console.WriteLine($"Category: {category.Key}");
-        
-            foreach (var product in category)
-            {
-                Console.WriteLine($"  {product.ProductName} - Stock: {product.UnitsInStock}");
-            }
-        }
+        // var productsWithAllInStock =
+        //     ProductsList.GroupBy(p => p.Category)
+        //         .Where(g => g.All(p => p.UnitsInStock != 0));
+        //
+        // foreach (var category in productsWithAllInStock)
+        // {
+        //     Console.WriteLine($"Category: {category.Key}");
+        //
+        //     foreach (var product in category)
+        //     {
+        //         Console.WriteLine($"  {product.ProductName} - Stock: {product.UnitsInStock}");
+        //     }
+        // }
 
         #endregion
+        
+        #endregion
 
+        #region Grouping Operators
+
+        #region 1. Use group by to partition a list of numbers by their remainder when divided by 5
+
+        List<int> numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        var result = from number in numbers
+            group number by number % 5
+            into g
+            select g;
+        foreach (var group in result)
+        {
+            Console.WriteLine($"Numbers with a reminder of {group.Key} when divided by 5:");
+            foreach (var number in group)
+            {
+                Console.Write($"{number} ");
+            }
+            Console.WriteLine();
+        }
+
+
+        #endregion
 
         #endregion
     }

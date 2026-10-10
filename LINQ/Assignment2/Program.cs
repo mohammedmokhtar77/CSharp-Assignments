@@ -408,21 +408,31 @@ class Program
         #region 2. Uses group by to partition a list of words by their first letter. 
 
 
-        var result = 
-            from word in words
-            group word by word[0] into g
-            select g;
-        foreach (var group in result)
-        {
-            Console.WriteLine($"Letter: {group.Key}");
-            foreach (var word in group)
-            {
-                Console.Write($"{word} ");
-            }
-            Console.WriteLine();
-        }
+        // var result = 
+        //     from word in words
+        //     group word by word[0] into g
+        //     select g;
+        // foreach (var group in result)
+        // {
+        //     Console.WriteLine($"Letter: {group.Key}");
+        //     foreach (var word in group)
+        //     {
+        //         Console.Write($"{word} ");
+        //     }
+        //     Console.WriteLine();
+        // }
 
         #endregion
+        
+        string[] arr = {"from", "salt", "earn", " last", "near", "form"}; 
+        var result = arr.Select(word => word.Trim())
+            .GroupBy(word => word, new LettersComparer());
+
+        foreach (var group in result)
+        {
+            Console.WriteLine($"Group: {string.Join(", ", group)}");
+        }
+
 
         #endregion
     }

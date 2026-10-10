@@ -51,17 +51,27 @@ class Program
         #endregion
 
         #region 2. Return a list of customers and how many orders each has.
-
-
-        var customerCountOrders = CustomersList.Select(c => 
-            new { 
-                Customer = c, 
-                OrdersCount = c.Orders.Count()
-                
-            }).ToList();
-        foreach (var customer in customerCountOrders)
-            Console.WriteLine($"{customer.Customer}: {customer.OrdersCount}");
         
+        // var customerCountOrders = CustomersList.Select(c => 
+        //     new { 
+        //         Customer = c, 
+        //         OrdersCount = c.Orders.Count()
+        //         
+        //     }).ToList();
+        // foreach (var customer in customerCountOrders)
+        //     Console.WriteLine($"{customer.Customer}: {customer.OrdersCount}");
+        
+
+        #endregion
+
+        #region 3. Return a list of categories and how many products each has 
+
+
+        var categoriesProductsCount = from p in ProductsList
+                                            group p by p.Category into g
+                                            select new {Category = g.Key, ProductCount = g.Count()};
+        foreach (var c in categoriesProductsCount) 
+            Console.WriteLine($"{c.Category} - {c.ProductCount}");
 
         #endregion
 

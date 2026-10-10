@@ -327,15 +327,25 @@ class Program
 
         #region 4. Get the elements of the array starting from the first element less than its position.
 
-        var result = numbers.SkipWhile((n, i) => n > i);
-        foreach (int number in result)
-        {
-            Console.Write($"{number} ");
-        }
+        // var result = numbers.SkipWhile((n, i) => n > i);
+        // foreach (int number in result)
+        // {
+        //     Console.Write($"{number} ");
+        // }
         
-
+        #endregion
 
         #endregion
+
+        #region Quantifiers
+
+        #region 1. Determine if any of the words in dictionary_english.txt contain the substring 'ei'. 
+
+        bool anyWordContainEi = words.Any(w => w.Contains("ei",StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine(anyWordContainEi);
+
+        #endregion
+        
 
         #endregion
     }

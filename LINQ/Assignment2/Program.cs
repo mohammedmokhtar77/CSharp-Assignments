@@ -66,12 +66,29 @@ class Program
 
         #region 3. Return a list of categories and how many products each has 
 
+        
+        // var categoriesProductsCount = from p in ProductsList
+        //                                     group p by p.Category into g
+        //                                     select new {Category = g.Key, ProductCount = g.Count()};
+        // foreach (var c in categoriesProductsCount) 
+        //     Console.WriteLine($"{c.Category} - {c.ProductCount}");
 
-        var categoriesProductsCount = from p in ProductsList
-                                            group p by p.Category into g
-                                            select new {Category = g.Key, ProductCount = g.Count()};
-        foreach (var c in categoriesProductsCount) 
-            Console.WriteLine($"{c.Category} - {c.ProductCount}");
+        #endregion
+
+        #region 4. Get the total of the numbers in an array.
+
+        var totalNumbers = arr.Sum();
+        Console.WriteLine(totalNumbers);
+
+        #endregion
+
+        #region 5. Get the total number of characters of all words in dictionary_english.txt
+
+        string[] words = File.ReadAllLines("dictionary_english.txt");
+        var totalNumberOfCharacters = words.SelectMany(w => w)
+                                    .Count();
+        Console.WriteLine(totalNumberOfCharacters);
+
 
         #endregion
 

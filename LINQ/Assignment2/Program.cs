@@ -226,10 +226,20 @@ class Program
         #region 1. Find the unique Category names from Product List
 
 
-        var uniqueCategories = ProductsList.Select(x => x.Category)
-            .Distinct().ToList();
-        foreach (var category in uniqueCategories)
-            Console.WriteLine(category);
+        // var uniqueCategories = ProductsList.Select(x => x.Category)
+        //     .Distinct().ToList();
+        // foreach (var category in uniqueCategories)
+        //     Console.WriteLine(category);
+
+        #endregion
+
+        #region 2. Produce a Sequence containing the unique first letter from both product and customer names.
+
+        var uniqueLetters = ProductsList.Select(p =>p.ProductName[0])
+            .Concat(CustomersList.Select(c => c.CustomerName[0]))
+            .Distinct();
+        foreach (var item in uniqueLetters)
+            Console.Write($"{item} ");
 
         #endregion
 

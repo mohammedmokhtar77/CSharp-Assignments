@@ -271,14 +271,46 @@ class Program
 
         #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates 
 
-        var lastThreeCharacters = CustomersList
-            .Select(c => c.CustomerName.Substring(c.CustomerName.Length - 3))
-            .Concat(ProductsList.Select(p => p.ProductName.Substring(p.ProductName.Length - 3)));
+        // var lastThreeCharacters = CustomersList
+        //     .Select(c => c.CustomerName.Substring(c.CustomerName.Length - 3))
+        //     .Concat(ProductsList.Select(p => p.ProductName.Substring(p.ProductName.Length - 3)));
+        //
+        // foreach (var item in lastThreeCharacters)
+        // {
+        //     Console.WriteLine(item);
+        // }
 
-        foreach (var item in lastThreeCharacters)
+        #endregion
+        
+        
+
+        #endregion
+
+        #region  Partitioning Operators
+
+        #region 1. Get the first 2 orders from customers in Germany
+
+        // var firstTwoOrdersInGermany = 
+        //     CustomersList.Where(c => c.Country == "Germany")
+        //     .SelectMany(c => c.Orders)
+        //     .Take(2);
+        // foreach (var order in firstTwoOrdersInGermany)
+        // {
+        //     Console.WriteLine(order);
+        // }
+
+
+        #endregion
+
+        #region 2. Return elements starting from the beginning of the array until a number is hit that is less than its position in the array. 
+
+        int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        var result = numbers.TakeWhile((num, index) => num > index);
+        foreach (var num in result)
         {
-            Console.WriteLine(item);
+            Console.Write($"{num} ");
         }
+
 
         #endregion
 

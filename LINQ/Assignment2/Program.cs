@@ -341,11 +341,46 @@ class Program
 
         #region 1. Determine if any of the words in dictionary_english.txt contain the substring 'ei'. 
 
-        bool anyWordContainEi = words.Any(w => w.Contains("ei",StringComparison.OrdinalIgnoreCase));
-        Console.WriteLine(anyWordContainEi);
+        // bool anyWordContainEi = words.Any(w => w.Contains("ei",StringComparison.OrdinalIgnoreCase));
+        // Console.WriteLine(anyWordContainEi);
 
         #endregion
+
+        #region 2. Return a grouped a list of products only for categories that have at least one product that is out of stock.
+
+        // var productsWithAtLeastOneOutOfStock =
+        //     ProductsList.GroupBy(p => p.UnitPrice)
+        //         .Where(g => g.Any(p => p.UnitsInStock == 0));
+        // foreach (var category in productsWithAtLeastOneOutOfStock)
+        // {
+        //     Console.WriteLine($"Category: {category.Key}");
+        //
+        //     foreach (var product in category)
+        //     {
+        //         Console.WriteLine($"  {product.ProductName} - Stock: {product.UnitsInStock}");
+        //     }
+        // }
+
+        #endregion
+
+        #region 3. Return a grouped a list of products only for categories that have all of their products in stock.
+
+        var productsWithAllInStock =
+            ProductsList.GroupBy(p => p.Category)
+                .Where(g => g.All(p => p.UnitsInStock != 0));
         
+        foreach (var category in productsWithAllInStock)
+        {
+            Console.WriteLine($"Category: {category.Key}");
+        
+            foreach (var product in category)
+            {
+                Console.WriteLine($"  {product.ProductName} - Stock: {product.UnitsInStock}");
+            }
+        }
+
+        #endregion
+
 
         #endregion
     }

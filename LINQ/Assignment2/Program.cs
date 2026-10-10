@@ -387,21 +387,40 @@ class Program
 
         #region 1. Use group by to partition a list of numbers by their remainder when divided by 5
 
-        List<int> numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-        var result = from number in numbers
-            group number by number % 5
-            into g
+        // List<int> numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        // var result = from number in numbers
+        //     group number by number % 5
+        //     into g
+        //     select g;
+        // foreach (var group in result)
+        // {
+        //     Console.WriteLine($"Numbers with a reminder of {group.Key} when divided by 5:");
+        //     foreach (var number in group)
+        //     {
+        //         Console.Write($"{number} ");
+        //     }
+        //     Console.WriteLine();
+        // }
+
+
+        #endregion
+
+        #region 2. Uses group by to partition a list of words by their first letter. 
+
+
+        var result = 
+            from word in words
+            group word by word[0] into g
             select g;
         foreach (var group in result)
         {
-            Console.WriteLine($"Numbers with a reminder of {group.Key} when divided by 5:");
-            foreach (var number in group)
+            Console.WriteLine($"Letter: {group.Key}");
+            foreach (var word in group)
             {
-                Console.Write($"{number} ");
+                Console.Write($"{word} ");
             }
             Console.WriteLine();
         }
-
 
         #endregion
 

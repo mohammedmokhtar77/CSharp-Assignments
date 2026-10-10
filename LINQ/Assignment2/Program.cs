@@ -50,6 +50,21 @@ class Program
 
         #endregion
 
+        #region 2. Return a list of customers and how many orders each has.
+
+
+        var customerCountOrders = CustomersList.Select(c => 
+            new { 
+                Customer = c, 
+                OrdersCount = c.Orders.Count()
+                
+            }).ToList();
+        foreach (var customer in customerCountOrders)
+            Console.WriteLine($"{customer.Customer}: {customer.OrdersCount}");
+        
+
+        #endregion
+
         #endregion
     }
 }
